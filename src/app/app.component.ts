@@ -18,12 +18,16 @@ export class AppComponent {
         this.isMainPage = evento.urlAfterRedirects === "/"
       }
     })
-  
-
-   
   }
 
 
   
+
+  }
+   
+
+
+  
  
-}
+
+

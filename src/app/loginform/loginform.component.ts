@@ -43,7 +43,7 @@ export class LoginformComponent {
         //Il sesssionStorage permette di salvare nel brawser alcune informazioni, noi ci salviamo il token
         //che utilizzeremo per fare tutte le richieste che richiedono un'autorizzazione
         sessionStorage.setItem("token", loginStatus.token);
-        if(loginStatus.ruolo == "AMMINISTRATORE"){
+        if(loginStatus.ruolo == "ADMIN"){
           console.log("Vai alla pagina amministratore");
           //windows.location.href permette di fare un redirect in automatico ad un url che specifichiamo come stringa
           window.location.href="/areaamministratore";
