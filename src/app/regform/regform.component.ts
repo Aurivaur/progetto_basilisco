@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Utente } from 'src/models/Utente';
 
 @Component({
   selector: 'app-regform',
@@ -9,16 +10,18 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class RegformComponent {
 
-  regForm : FormGroup;
+  @Input() utenti? : Utente[];
+  formInserisciUtente : FormGroup;
+
 
   constructor(private http : HttpClient, private formBuilder : FormBuilder){
     
     this.http = http;
-    this.regForm = formBuilder.group(
+    this.formInserisciUtente = formBuilder.group(
       {
         nome : "",
         cognome : "",
-        dataNascita : "",
+        datanascita : "",
         mail :"",
         username : "",
         password : ""
@@ -27,7 +30,53 @@ export class RegformComponent {
   }
 
   //fare metodo submitRegForm!
-  submitForm(){}
+  submitForm(){
+    const formValues = this.formInserisciUtente.value;
+
+    //jsonifica i dati
+    const body = JSON.stringify(formValues);
+
+    let token = sessionStorage.getItem("token");
+    if(token == null){
+      token = "";
+    }
+
+    const headers = new HttpHeaders(
+      {
+        'Content-Type' : 'application/json',
+        'token': token as string
+      }
+    );
+
+    this.http.post<Utente>("http://localhost:8080/api/utente/insert", body, {headers}).subscribe(risposta =>{
+
+      if(!risposta){
+        alert("Errore durante l'esecuzione della richiesta");
+      }
+      else{
+       this.utenti?.push(risposta);
+      }
+
+      this.formInserisciUtente.patchValue(
+        {
+          nome : "",
+          cognome : "",
+          datanascita : "",
+          mail : "",
+          username : "",
+          password : "",
+        }
+      )
+
+      
+    })
+  }
+
+
+
+
+
+  }
 
 
   
@@ -35,4 +84,4 @@ export class RegformComponent {
 
 
 
-}
+

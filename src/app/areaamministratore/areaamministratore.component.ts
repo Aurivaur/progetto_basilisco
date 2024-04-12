@@ -31,7 +31,7 @@ export class AreaamministratoreComponent {
       }
     )
 
-    this.http.get<Utente[]>("http://localhost:8080/api/studente/all", {headers}).subscribe(risposta =>{
+    this.http.get<Utente[]>("http://localhost:8080/api/utenti/all", {headers}).subscribe(risposta =>{
       this.utenti = risposta;
     })
   }
@@ -49,7 +49,7 @@ export class AreaamministratoreComponent {
       }
     )
 
-    this.http.get<Prodotto[]>("http://localhost:8080/api/studente/all", {headers}).subscribe(risposta =>{
+    this.http.get<Prodotto[]>("http://localhost:8080/api/prodotti/all", {headers}).subscribe(risposta =>{
       this.prodotti = risposta;
     })
   }
@@ -59,7 +59,7 @@ export class AreaamministratoreComponent {
   checkLogin(){
     let token = sessionStorage.getItem("token");
     if(token == null){
-      alert("NON HAI EFFETTUATO UN LOGIN VALIDO")
+      alert("NON HAI EFFETTUATO UN LOGIN VALIDO!")
       sessionStorage.clear();
       window.location.href="/home";
       return;

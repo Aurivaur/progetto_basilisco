@@ -1,5 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, Input } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { Libro } from 'src/models/Libro';
 import { Persona } from 'src/models/Persona';
 import { Prodotto } from 'src/models/Prodotto';
 import { Utente } from 'src/models/Utente';
@@ -10,6 +12,12 @@ import { Utente } from 'src/models/Utente';
   styleUrls: ['./tabellaprodotti.component.css']
 })
 export class TabellaprodottiComponent {
+
+  @Input() libri? : Libro[];
+
+  constructor(private http : HttpClient, private formBuider : FormBuilder){
+    this.http = http;
+  }
 
   
 
