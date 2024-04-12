@@ -1,5 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, Input } from '@angular/core';
+import { Disco } from 'src/models/Disco';
+import { Gioco } from 'src/models/Gioco';
+import { Libro } from 'src/models/Libro';
 import { Prodotto } from 'src/models/Prodotto';
 import { Utente } from 'src/models/Utente';
 
@@ -12,6 +15,9 @@ export class AreaamministratoreComponent {
 
   @Input() prodotti? : Prodotto[];
   @Input() utenti? : Utente[];
+  @Input() libri? : Libro[];
+  @Input() dischi? : Disco[];
+  @Input() giochi? : Gioco[];
 
   constructor(private http : HttpClient){
     this.http = http;
@@ -31,7 +37,7 @@ export class AreaamministratoreComponent {
       }
     )
 
-    this.http.get<Utente[]>("http://localhost:8080/api/utenti/all", {headers}).subscribe(risposta =>{
+    this.http.get<Utente[]>("http://localhost:8080/api/utenti/allutenti", {headers}).subscribe(risposta =>{
       this.utenti = risposta;
     })
   }
@@ -49,10 +55,67 @@ export class AreaamministratoreComponent {
       }
     )
 
-    this.http.get<Prodotto[]>("http://localhost:8080/api/prodotti/all", {headers}).subscribe(risposta =>{
+    this.http.get<Prodotto[]>("http://localhost:8080/api/prodotti/allprodotti", {headers}).subscribe(risposta =>{
       this.prodotti = risposta;
     })
   }
+
+  //LISTE SEPARATE
+  getAllLibri(){
+    let token = sessionStorage.getItem("token");
+    if(token == null){
+      token = "";
+    }
+    
+    const headers = new HttpHeaders(
+      {
+        'Content-Type' : 'application/json',
+        'token' : token,
+      }
+    )
+
+    this.http.get<Libro[]>("http://localhost:8080/api/prodotti/alllibri", {headers}).subscribe(risposta =>{
+      this.libri = risposta;
+    })
+  }
+
+  getAllDischi(){
+    let token = sessionStorage.getItem("token");
+    if(token == null){
+      token = "";
+    }
+    
+    const headers = new HttpHeaders(
+      {
+        'Content-Type' : 'application/json',
+        'token' : token,
+      }
+    )
+
+    this.http.get<Disco[]>("http://localhost:8080/api/prodotti/alldischi", {headers}).subscribe(risposta =>{
+      this.dischi = risposta;
+    })
+  }
+
+  getAllGiochi(){
+    let token = sessionStorage.getItem("token");
+    if(token == null){
+      token = "";
+    }
+    
+    const headers = new HttpHeaders(
+      {
+        'Content-Type' : 'application/json',
+        'token' : token,
+      }
+    )
+
+    this.http.get<Gioco[]>("http://localhost:8080/api/prodotti/allgiochi", {headers}).subscribe(risposta =>{
+      this.giochi = risposta;
+    })
+  }
+
+  
 
 
   //CHECKLOGIN che ti fa entrare nella pagina 
@@ -75,14 +138,14 @@ export class AreaamministratoreComponent {
         }
       );
 
-      this.http.get("http://localhost:8080/api/login/checklogin", {headers}).subscribe(risposta =>{
+      this.http.get("http://localhost:8080/api/login/login", {headers}).subscribe(risposta =>{
         let check = risposta as boolean;
         if(!check){
           alert("Non sei autorizzato ad accedere a questa pagina")
           window.location.href="/";
         }
         else{
-          let id  = token?.split("-")[1] as string;
+          let id = token?.split("-")[1] as string;
           
           //richieste per informazini necessarie
           this.getAllProdotti();

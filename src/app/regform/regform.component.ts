@@ -19,6 +19,7 @@ export class RegformComponent {
     this.http = http;
     this.formInserisciUtente = formBuilder.group(
       {
+        ruolo : "user",
         nome : "",
         cognome : "",
         datanascita : "",
@@ -29,22 +30,22 @@ export class RegformComponent {
     )
   }
 
-  //fare metodo submitRegForm!
+  //inserimento nuovo utente
   submitForm(){
     const formValues = this.formInserisciUtente.value;
 
     //jsonifica i dati
     const body = JSON.stringify(formValues);
 
-    let token = sessionStorage.getItem("token");
-    if(token == null){
-      token = "";
-    }
+    //let token = sessionStorage.getItem("token");
+    //if(token == null){
+      //token = "";
+    //}
 
     const headers = new HttpHeaders(
       {
         'Content-Type' : 'application/json',
-        'token': token as string
+        //'token': token as string
       }
     );
 
