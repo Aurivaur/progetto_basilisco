@@ -48,7 +48,7 @@ export class LoginformComponent {
           //windows.location.href permette di fare un redirect in automatico ad un url che specifichiamo come stringa
           window.location.href="/areaamministratore";
         }
-        else if(loginStatus.ruolo == "UTENTE"){
+        else if(loginStatus.ruolo == "USER"){
           console.log("Vai alla pagina utente");
           window.location.href="/areautente";
   

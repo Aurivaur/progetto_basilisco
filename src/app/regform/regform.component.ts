@@ -49,7 +49,7 @@ export class RegformComponent {
       }
     );
 
-    this.http.post<Utente>("http://localhost:8080/api/utente/insert", body, {headers}).subscribe(risposta =>{
+    this.http.post<Utente>("http://localhost:8080/api/utente/registrati", body, {headers}).subscribe(risposta =>{
 
       if(!risposta){
         alert("Errore durante l'esecuzione della richiesta");
@@ -60,6 +60,7 @@ export class RegformComponent {
 
       this.formInserisciUtente.patchValue(
         {
+          ruolo : "user",
           nome : "",
           cognome : "",
           datanascita : "",
