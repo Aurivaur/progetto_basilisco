@@ -77,3 +77,12 @@ h1{
     text-align: right;
     transform: translate(0, 5%);
   }
+
+  #logo
+{
+  position: absolute;
+  top: 45px;
+  bottom: 100px;
+  left: 350px
+
+}
