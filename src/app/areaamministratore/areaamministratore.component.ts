@@ -37,7 +37,7 @@ export class AreaamministratoreComponent {
       }
     )
 
-    this.http.get<Utente[]>("http://localhost:8080/api/utenti/allutenti", {headers}).subscribe(risposta =>{
+    this.http.get<Utente[]>("http://localhost:8080/api/admin/allutenti", {headers}).subscribe(risposta =>{
       this.utenti = risposta;
     })
   }
@@ -55,7 +55,7 @@ export class AreaamministratoreComponent {
       }
     )
 
-    this.http.get<Prodotto[]>("http://localhost:8080/api/prodotti/allprodotti", {headers}).subscribe(risposta =>{
+    this.http.get<Prodotto[]>("http://localhost:8080/api/admin/allprodotti", {headers}).subscribe(risposta =>{
       this.prodotti = risposta;
     })
   }
@@ -74,7 +74,7 @@ export class AreaamministratoreComponent {
       }
     )
 
-    this.http.get<Libro[]>("http://localhost:8080/api/prodotti/alllibri", {headers}).subscribe(risposta =>{
+    this.http.get<Libro[]>("http://localhost:8080/api/admin/alllibri", {headers}).subscribe(risposta =>{
       this.libri = risposta;
     })
   }
@@ -92,7 +92,7 @@ export class AreaamministratoreComponent {
       }
     )
 
-    this.http.get<Disco[]>("http://localhost:8080/api/prodotti/alldischi", {headers}).subscribe(risposta =>{
+    this.http.get<Disco[]>("http://localhost:8080/api/admin/alldischi", {headers}).subscribe(risposta =>{
       this.dischi = risposta;
     })
   }
@@ -110,7 +110,7 @@ export class AreaamministratoreComponent {
       }
     )
 
-    this.http.get<Gioco[]>("http://localhost:8080/api/prodotti/allgiochi", {headers}).subscribe(risposta =>{
+    this.http.get<Gioco[]>("http://localhost:8080/api/admin/allgiochi", {headers}).subscribe(risposta =>{
       this.giochi = risposta;
     })
   }
