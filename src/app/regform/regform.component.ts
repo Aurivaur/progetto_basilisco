@@ -70,6 +70,8 @@ export class RegformComponent {
         }
       )
 
+      window.location.href="/areautente";
+
       
     })
   }

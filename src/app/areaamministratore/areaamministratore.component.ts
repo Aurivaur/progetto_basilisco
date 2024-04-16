@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { Disco } from 'src/models/Disco';
 import { Gioco } from 'src/models/Gioco';
 import { Libro } from 'src/models/Libro';
+import { Persona } from 'src/models/Persona';
 import { Prodotto } from 'src/models/Prodotto';
 import { Utente } from 'src/models/Utente';
 
@@ -15,15 +16,17 @@ export class AreaamministratoreComponent {
 
   @Input() prodotti? : Prodotto[];
   @Input() utenti? : Utente[];
+  @Input() admin? : Persona[];
   @Input() libri? : Libro[];
   @Input() dischi? : Disco[];
   @Input() giochi? : Gioco[];
 
   constructor(private http : HttpClient){
     this.http = http;
+    this.checkLogin();
   }
 
-  //LISTA UTENTI E PRODOTTI VISIBILI DALL'ADMIN
+  //LISTA UTENTI, ADMIN E PRODOTTI VISIBILI DALL'ADMIN
   getAllUtenti(){
     let token = sessionStorage.getItem("token");
     if(token == null){
@@ -39,6 +42,24 @@ export class AreaamministratoreComponent {
 
     this.http.get<Utente[]>("http://localhost:8080/api/admin/allutenti", {headers}).subscribe(risposta =>{
       this.utenti = risposta;
+    })
+  }
+
+  getAllAdmin(){
+    let token = sessionStorage.getItem("token");
+    if(token == null){
+      token = "";
+    }
+    
+    const headers = new HttpHeaders(
+      {
+        'Content-Type' : 'application/json',
+        'token' : token,
+      }
+    )
+
+    this.http.get<Persona[]>("http://localhost:8080/api/admin/alladmin", {headers}).subscribe(risposta =>{
+      this.admin = risposta;
     })
   }
 
@@ -148,8 +169,12 @@ export class AreaamministratoreComponent {
           let id = token?.split("-")[1] as string;
           
           //richieste per informazini necessarie
-          this.getAllProdotti();
-          this.getAllUtenti();
+          //this.getAllProdotti();
+          //this.getAllUtenti();
+          //this.getAllDischi();
+          //this.getAllGiochi();
+          this.getAllLibri();
+          //this.getAllAdmin();
           
         }
       })

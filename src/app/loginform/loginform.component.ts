@@ -1,7 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { LoginStatus } from 'src/models/LoginStatus';
+import { Persona } from 'src/models/Persona';
 
 @Component({
   selector: 'app-loginform',
@@ -9,6 +10,9 @@ import { LoginStatus } from 'src/models/LoginStatus';
   styleUrls: ['./loginform.component.css']
 })
 export class LoginformComponent {
+
+  @Output() nomeutente = new EventEmitter<Persona>();
+
 
   loginForm : FormGroup;
 

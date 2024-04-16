@@ -1,1 +1,12 @@
-<p>areautente works!</p>
+<h1>Benvenuta/o {{user?.nome}}</h1> 
+<div>
+    <h3>Nome: {{user?.nome}}</h3>
+    <h3>Cognome: {{user?.cognome}}</h3>
+    <h3>Data di Nascita: {{user?.dataNascita}}</h3>
+    <h3>Mail: {{user?.email}}</h3>
+    <h3>Indirizzo di Fatturazione: {{user?.indirizzoFatturazione}}</h3>
+    <h3>Indirizzo di Spedizione: {{user?.indirizzoSpedizione}}</h3>
+    <h3>Metodo di pagamento: {{user?.metodoPagamento}}</h3>
+</div>
+<button (click)="logout()">LOGOUT</button>
+

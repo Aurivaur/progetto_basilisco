@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Utente } from 'src/models/Utente';
 
 @Component({
   selector: 'app-tabellautenti',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./tabellautenti.component.css']
 })
 export class TabellautentiComponent {
+
+  @Input() utenti? : Utente[];
 
 }
