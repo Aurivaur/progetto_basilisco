@@ -12,6 +12,9 @@ import { TabellautentiComponent } from './areaamministratore/tabellautenti/tabel
 import { TabellaprodottiComponent } from './areaamministratore/tabellaprodotti/tabellaprodotti.component';
 import { HomeComponent } from './home/home.component';
 import { RegformComponent } from './regform/regform.component';
+import { LibriComponent } from './home/libri/libri.component';
+import { DischiComponent } from './home/dischi/dischi.component';
+import { GiochiComponent } from './home/giochi/giochi.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { RegformComponent } from './regform/regform.component';
     TabellautentiComponent,
     TabellaprodottiComponent,
     HomeComponent,
-    RegformComponent
+    RegformComponent,
+    LibriComponent,
+    DischiComponent,
+    GiochiComponent
   ],
   imports: [
     BrowserModule,

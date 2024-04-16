@@ -10,4 +10,10 @@ export class TabellautentiComponent {
 
   @Input() utenti? : Utente[];
 
+  isUtente = false;
+
+  toggleVediUtenti(){
+    this.isUtente = !this.isUtente;
+  }
+
 }

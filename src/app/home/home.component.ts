@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { Libro } from 'src/models/Libro';
+import { LoginStatus } from 'src/models/LoginStatus';
 
 @Component({
   selector: 'app-home',
@@ -8,19 +10,22 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class HomeComponent {
 
+  @Input() libri? : Libro[];
+  @Input() token? : LoginStatus;
+
   isMainPage = false;
+  isLogin = false;
 
   constructor(private router : Router){
     //Con questo codice controlliamo se siamo 'atterrati' sulla pagina principale (cioe': "/")
     this.router.events.subscribe(evento =>{
       if(evento instanceof NavigationEnd){
-        this.isMainPage = evento.urlAfterRedirects === "/arealogin"
+        this.isMainPage = evento.urlAfterRedirects === "/"
       }
     })
   }
 
   login(){
-    
     window.location.href="/arealogin";
   }
 
@@ -28,5 +33,26 @@ export class HomeComponent {
   {
     window.location.href="/arearegistrazione";
   }
+
+  arealibri(){
+    
+    window.location.href="/arealibri";
+  }
+
+  areadischi(){
+    
+    window.location.href="/areadischi";
+  }
+
+  areagiochi(){
+    
+    window.location.href="/areagiochi";
+  }
+
+  logout(){
+    sessionStorage.clear();
+    window.location.href="/";
+  }
+
 
 }

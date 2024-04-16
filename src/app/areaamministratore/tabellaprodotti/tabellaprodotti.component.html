@@ -1,7 +1,117 @@
-<div *ngFor="let l of libri">
-    <p>
-        Nome: {{l.titolo}} <br>
-        Cognome: {{l.prezzo}} €
 
-    </p>
+<h5>LISTA DEI LIBRI</h5>
+<div *ngIf="isLibro" class="modal">
+<button (click)="toggleVediLibri()">CHIUDI</button>
+<table>
+    <thead>
+        <th>Id</th>
+        <th>Titolo</th>
+        <th>Autore</th>
+        <th>Genere</th>
+        <th>Anno di Pubblicazione</th>
+        <th>Editore</th>
+        <th>Numero di Pagine</th>
+        <th>Quantità</th>
+        <th>Prezzo</th>
+        <th>Descrizione</th>
+        <th>Elimina</th>
+        <th>Modifica</th>
+    </thead>
+    <tbody>
+<tr *ngFor="let l of libri"> 
+    <td>{{l.id}}</td>
+    <td>{{l.titolo}}</td>
+    <td>{{l.autore}}</td>
+    <td>{{l.genere}}</td> 
+    <td>{{l.annoPubblicazione}}</td> 
+    <td>{{l.editore}}</td> 
+    <td>{{l.nPagine}}</td> 
+    <td>{{l.quantita}}</td> 
+    <td>{{l.prezzo}}</td>
+    <td>{{l.descrizione}}</td> 
+       
+</tr>
+</tbody>
+</table>
 </div>
+<button (click)="toggleVediLibri()" *ngIf="!isLibro">Vedi Lista Libri</button>
+
+<h5>LISTA DEI GIOCHI</h5>
+<div *ngIf="isGioco" class="modal">
+<button (click)="toggleVediGiochi()">CHIUDI</button>
+<table>
+    <thead>
+        <th>Id</th>
+        <th>Titolo</th>
+        <th>Genere</th>
+        <th>Anno di Pubblicazione</th>
+        <th>Editore</th>
+        <th>Quantità</th>
+        <th>Prezzo</th>
+        <th>Età minima</th>
+        <th>Numero minimo di giocatori</th>
+        <th>Numero massimo di giocatori</th>
+        <th>Durata</th>
+        <th>Descrizione</th>
+        <th>Elimina</th>
+        <th>Modifica</th>
+    </thead>
+    <tbody>
+<tr *ngFor="let l let of giochi"> 
+    <td>{{l.id}}</td>
+    <td>{{l.titolo}}</td>
+    <td>{{l.genere}}</td> 
+    <td>{{l.annoPubblicazione}}</td> 
+    <td>{{l.editore}}</td> 
+    <td>{{l.quantita}}</td> 
+    <td>{{l.prezzo}}</td>
+    <td>{{l.minEta}}</td>
+    <td>{{l.minGiocatori}}</td>
+    <td>{{l.maxGiocatori}}</td>
+    <td>{{l.durata}}</td>
+    <td>{{l.descrizione}}</td> 
+       
+</tr>
+</tbody>
+</table>
+</div>
+<button (click)="toggleVediGiochi()" *ngIf="!isGioco">Vedi Lista Giochi</button>
+
+<h5>LISTA DEI DISCHI</h5>
+<div *ngIf="isDisco" class="modal">
+<button (click)="toggleVediDischi()">CHIUDI</button>
+<table>
+    <thead>
+        <th>Id</th>
+        <th>Titolo</th>
+        <th>Autore</th>
+        <th>Genere</th>
+        <th>Anno di Pubblicazione</th>
+        <th>Editore</th>
+        <th>Quantità</th>
+        <th>Prezzo</th>
+        <th>Durata</th>
+        <th>Descrizione</th>
+        <th>Elimina</th>
+        <th>Modifica</th>
+    </thead>
+    <tbody>
+<tr *ngFor="let l of dischi"> 
+    <td>{{l.id}}</td>
+    <td>{{l.titolo}}</td>
+    <td>{{l.genere}}</td> 
+    <td>{{l.autore}}</td>
+    <td>{{l.annoPubblicazione}}</td> 
+    <td>{{l.editore}}</td> 
+    <td>{{l.quantita}}</td> 
+    <td>{{l.prezzo}}</td>
+    <td>{{l.durata}}</td>
+    <td>{{l.descrizione}}</td> 
+       
+</tr>
+</tbody>
+</table>
+</div>
+<button (click)="toggleVediDischi()" *ngIf="!isDisco">Vedi Lista Dischi</button>
+
+

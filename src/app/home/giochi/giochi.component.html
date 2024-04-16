@@ -1,0 +1,20 @@
+<h5>LISTA DEI GIOCHI</h5>
+<table>
+    <thead>
+        <th>Titolo</th>
+        <th>Genere</th>
+        <th>Anno di Pubblicazione</th>
+        <th>Quantità</th>
+        <th>Prezzo</th>
+    </thead>
+    <tbody>
+<tr *ngFor="let l let of giochi"> 
+    <td>{{l.titolo}}</td>
+    <td>{{l.genere}}</td> 
+    <td>{{l.annoPubblicazione}}</td> 
+    <td>{{l.quantita}}</td> 
+    <td>{{l.prezzo}}</td>
+       
+</tr>
+</tbody>
+</table>

@@ -4,6 +4,10 @@ import { AreaamministratoreComponent } from './areaamministratore/areaamministra
 import { AreautenteComponent } from './areautente/areautente.component';
 import { LoginformComponent } from './loginform/loginform.component';
 import { RegformComponent } from './regform/regform.component';
+import { LibriComponent } from './home/libri/libri.component';
+import { DischiComponent } from './home/dischi/dischi.component';
+import { GiochiComponent } from './home/giochi/giochi.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
@@ -23,6 +27,22 @@ const routes: Routes = [
   {
     path : 'arearegistrazione',
     component : RegformComponent
+  },
+  {
+    path : 'arealibri',
+    component : LibriComponent
+  },
+  {
+    path : 'areadischi',
+    component : DischiComponent
+  },
+  {
+    path : 'areagiochi',
+    component : GiochiComponent
+  },
+  {
+    path : 'home',
+    component : HomeComponent
   }
 
 ];

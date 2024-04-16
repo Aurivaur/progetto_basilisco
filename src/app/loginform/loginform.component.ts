@@ -11,7 +11,8 @@ import { Persona } from 'src/models/Persona';
 })
 export class LoginformComponent {
 
-  @Output() nomeutente = new EventEmitter<Persona>();
+  
+  @Output() isLogin = new EventEmitter<Boolean>();
 
 
   loginForm : FormGroup;
@@ -53,9 +54,7 @@ export class LoginformComponent {
           window.location.href="/areaamministratore";
         }
         else if(loginStatus.ruolo == "USER"){
-          console.log("Vai alla pagina utente");
-          window.location.href="/areautente";
-  
+          window.location.href="/home";
         }
       }
       else{

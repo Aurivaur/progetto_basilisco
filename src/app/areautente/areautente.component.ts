@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Component, Input } from '@angular/core';
+import { Prodotto } from 'src/models/Prodotto';
 import { Utente } from 'src/models/Utente';
 
 @Component({
@@ -10,8 +11,10 @@ import { Utente } from 'src/models/Utente';
 export class AreautenteComponent {
 
   user? : Utente;
+  prodotto? : Prodotto[];
 
   isDatiPersonali = false;
+  isCarrello = false;
 
   constructor(private http : HttpClient){
     this.http = http;
@@ -82,6 +85,15 @@ export class AreautenteComponent {
         }
       })
     }
+  }
+
+  //TOGGLE PER DATI PERSONALI E CARRELLO
+  toggleVediDati(){
+    this.isDatiPersonali = !this.isDatiPersonali;
+  }
+
+  toggleVediCarrello(){
+    this.isCarrello = !this.isCarrello;
   }
 
 

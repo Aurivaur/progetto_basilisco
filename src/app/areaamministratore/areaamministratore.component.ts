@@ -21,6 +21,12 @@ export class AreaamministratoreComponent {
   @Input() dischi? : Disco[];
   @Input() giochi? : Gioco[];
 
+  isLibro = false;
+  isGioco = false;
+  isDisco = false;
+  isUtente = false;
+  
+  
   constructor(private http : HttpClient){
     this.http = http;
     this.checkLogin();
@@ -98,6 +104,8 @@ export class AreaamministratoreComponent {
     this.http.get<Libro[]>("http://localhost:8080/api/admin/alllibri", {headers}).subscribe(risposta =>{
       this.libri = risposta;
     })
+
+    this.toggleVediLibri();
   }
 
   getAllDischi(){
@@ -116,6 +124,8 @@ export class AreaamministratoreComponent {
     this.http.get<Disco[]>("http://localhost:8080/api/admin/alldischi", {headers}).subscribe(risposta =>{
       this.dischi = risposta;
     })
+
+    this.toggleVediDischi();
   }
 
   getAllGiochi(){
@@ -134,6 +144,8 @@ export class AreaamministratoreComponent {
     this.http.get<Gioco[]>("http://localhost:8080/api/admin/allgiochi", {headers}).subscribe(risposta =>{
       this.giochi = risposta;
     })
+
+    this.toggleVediGiochi();
   }
 
   
@@ -170,15 +182,32 @@ export class AreaamministratoreComponent {
           
           //richieste per informazini necessarie
           //this.getAllProdotti();
-          //this.getAllUtenti();
-          //this.getAllDischi();
-          //this.getAllGiochi();
+          this.getAllUtenti();
+          this.getAllDischi();
+          this.getAllGiochi();
           this.getAllLibri();
           //this.getAllAdmin();
           
         }
       })
     }
+  }
+
+  //TOGGLE PER VEDERE LE LISTE 
+  toggleVediLibri(){
+    this.isLibro = !this.isLibro;
+  }
+
+  toggleVediGiochi(){
+    this.isGioco = !this.isGioco;
+  }
+
+  toggleVediDischi(){
+    this.isDisco = !this.isDisco;
+  }
+
+  toggleVediUtenti(){
+    this.isUtente = !this.isUtente;
   }
  
 

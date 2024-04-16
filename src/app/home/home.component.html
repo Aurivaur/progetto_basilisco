@@ -1,5 +1,12 @@
-<button class="button-86" role="button" (click)="login()">ACCEDI</button><br> 
+
+<button class="button-86" role="button" (click)="login()" *ngIf="!isLogin">ACCEDI</button><br>
+<div><button class="button-86" role="button"(click)="logout()" *ngIf="isLogin" >LOGOUT</button></div> 
 <br><button class="button-86" role="button" (click)="registrazione()">REGISTRATI</button>
+
 <br>
 <div id="logo"><img src="assets/images/logoBa.jpg" height="100px" width="90px"/></div>
 <h1>E-COMMERCE BASILISKO</h1>
+<div>
+<button class="button-87" role="button" (click)="arealibri()">LIBRI</button><br> 
+<button class="button-87" role="button" (click)="areadischi()">DISCHI</button><br> 
+<button class="button-87" role="button" (click)="areagiochi()">GIOCHI</button><br> 

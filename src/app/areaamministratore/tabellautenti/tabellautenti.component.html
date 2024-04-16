@@ -1,8 +1,11 @@
-<div *ngFor="let u of utenti">
+<h5>LISTA DEGLI UTENTI</h5>
+<div *ngIf="isUtente" class="modal">
+<button (click)="toggleVediUtenti()">CHIUDI</button>
+<div *ngFor="let u of utenti"> 
     <p>
-        Ruolo : {{u.ruolo}} <br>
         Nome: {{u.nome}} <br>
-        Cognome: {{u.cognome}}
+        Cognome: {{u.cognome}} €
 
     </p>
-</div>
+</div></div>
+<button (click)="toggleVediUtenti()" *ngIf="!isUtente">Vedi Lista degli Utenti</button>
