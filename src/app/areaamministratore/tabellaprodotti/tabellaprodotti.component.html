@@ -28,7 +28,8 @@
     <td>{{l.nPagine}}</td> 
     <td>{{l.quantita}}</td> 
     <td>{{l.prezzo}}</td>
-    <td>{{l.descrizione}}</td> 
+    <td>{{l.descrizione}}</td>
+    <td><button (click)="deleteLibri(l.id)">Elimina</button></td> 
        
 </tr>
 </tbody>
@@ -70,6 +71,7 @@
     <td>{{l.maxGiocatori}}</td>
     <td>{{l.durata}}</td>
     <td>{{l.descrizione}}</td> 
+    <td><button (click)="deleteGiochi(l.id)">Elimina</button></td>
        
 </tr>
 </tbody>
@@ -107,6 +109,7 @@
     <td>{{l.prezzo}}</td>
     <td>{{l.durata}}</td>
     <td>{{l.descrizione}}</td> 
+    <td><button (click)="deleteDischi(l.id)">Elimina</button></td>
        
 </tr>
 </tbody>
