@@ -14,7 +14,14 @@ export class HomeComponent {
   @Input() token? : LoginStatus;
 
   isMainPage = false;
-  isLogin = false;
+  isLogin: boolean = false;
+
+  handleLoginSuccess(isLoggedIn: boolean) 
+  {
+    this.isLogin = isLoggedIn;
+    // Perform any other actions you need upon successful login, such as updating UI elements
+  }
+
 
   constructor(private router : Router){
     //Con questo codice controlliamo se siamo 'atterrati' sulla pagina principale (cioe': "/")

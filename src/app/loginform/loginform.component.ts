@@ -55,6 +55,7 @@ export class LoginformComponent {
         }
         else if(loginStatus.ruolo == "USER"){
           window.location.href="/home";
+          this.isLogin.emit(true); // Emit event upon successful login
         }
       }
       else{
