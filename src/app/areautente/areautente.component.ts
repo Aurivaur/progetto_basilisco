@@ -35,7 +35,7 @@ export class AreautenteComponent {
 
     const params = new HttpParams().set('idUser', id);
 
-    this.http.get("http://localhost:8080/api/user/byId", {headers, params},).subscribe(risposta =>{
+    this.http.get("http://localhost:8080/api/utente/byId", {headers, params},).subscribe(risposta =>{
       console.log(risposta);
     
       this.user = risposta as Utente;
