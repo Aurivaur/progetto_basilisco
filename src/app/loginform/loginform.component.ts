@@ -54,7 +54,7 @@ export class LoginformComponent {
           window.location.href="/areaamministratore";
         }
         else if(loginStatus.ruolo == "USER"){
-          window.location.href="/home";
+          window.location.href="/areautente";
         }
       }
       else{
