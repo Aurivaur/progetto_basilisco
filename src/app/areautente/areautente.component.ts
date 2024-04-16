@@ -75,7 +75,7 @@ export class AreautenteComponent {
         }
         else{
           let id = token?.split("-")[1] as string;
-          
+          this.getUtente(id);
           //richieste per informazini necessarie - DA FARE
           //this.getAllProdotti();
           //this.getAllDischi();
