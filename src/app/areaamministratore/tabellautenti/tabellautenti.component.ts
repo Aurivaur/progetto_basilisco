@@ -13,6 +13,7 @@ export class TabellautentiComponent {
   @Input() utenti? : Utente[];
 
   formInserisciUtente : FormGroup;
+  formModificaUtente? : FormGroup;
   isInserisciUtente = false;
 
   isUtente = false;
@@ -97,7 +98,7 @@ export class TabellautentiComponent {
       }
     );
   
-    this.http.post<Utente>("http://localhost:8080/api/admin/insert", body, {headers}).subscribe(risposta =>{
+    this.http.post<Utente>("http://localhost:8080/api/admin/insertutente", body, {headers}).subscribe(risposta =>{
   
       if(!risposta){
         alert("Errore durante l'esecuzione della richiesta");
