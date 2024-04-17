@@ -32,7 +32,7 @@ export class TabellaprodottiComponent {
     this.formInserisciDischi = formBuider.group(
       {
         titolo : "",
-        quantita : "",
+        quantitamagazzino : "",
         prezzo : "",
         editore : "",
         annopubblicazione : "",
@@ -58,14 +58,14 @@ export class TabellaprodottiComponent {
     this.formInserisciGiochi = formBuider.group(
       {
         titolo : "",
-        quantita : "",
+        quantitamagazzino : "",
         prezzo : "",
         editore : "",
         annopubblicazione : "",
         descrizione : "",
-        minEta : "",
-        minGiocatori : "",
-        maxGiocatori : "",
+        etaminima : "",
+        mingiocatori : "",
+        maxgiocatori : "",
         durata : ""
       }
     )
@@ -113,7 +113,7 @@ export class TabellaprodottiComponent {
 
     const params = new HttpParams().set('idDisco', id);
 
-    this.http.get<boolean>("http://localhost:8080/api/admin/delete", {headers, params}).subscribe(risposta =>{
+    this.http.get<boolean>("http://localhost:8080/api/admin/deletedisco", {headers, params}).subscribe(risposta =>{
       if(risposta){
         alert("Eliminazione avvenuta con successo");
         let pos = this.dischi?.findIndex(x => x.id === id)
@@ -140,7 +140,7 @@ export class TabellaprodottiComponent {
 
     const params = new HttpParams().set('idLibro', id);
 
-    this.http.get<boolean>("http://localhost:8080/api/admin/delete", {headers, params}).subscribe(risposta =>{
+    this.http.get<boolean>("http://localhost:8080/api/admin/deletelibro", {headers, params}).subscribe(risposta =>{
       if(risposta){
         alert("Eliminazione avvenuta con successo");
         let pos = this.libri?.findIndex(x => x.id === id)
@@ -167,7 +167,7 @@ export class TabellaprodottiComponent {
 
     const params = new HttpParams().set('idGioco', id);
 
-    this.http.get<boolean>("http://localhost:8080/api/admin/delete", {headers, params}).subscribe(risposta =>{
+    this.http.get<boolean>("http://localhost:8080/api/admin/deletegioco", {headers, params}).subscribe(risposta =>{
       if(risposta){
         alert("Eliminazione avvenuta con successo");
         let pos = this.giochi?.findIndex(x => x.id === id)
