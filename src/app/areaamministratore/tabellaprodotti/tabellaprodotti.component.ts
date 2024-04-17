@@ -82,6 +82,7 @@ export class TabellaprodottiComponent {
     )
     this.formModificaDischi = formBuider.group(
       {
+        id : "",
         titolo : "",
         quantitamagazzino : "",
         prezzo : "",
@@ -95,6 +96,7 @@ export class TabellaprodottiComponent {
     )
     this.formModificaLibri = formBuider.group(
       {
+        id : "",
         titolo : "",
         quantitamagazzino : "",
         prezzo : "",
@@ -108,6 +110,7 @@ export class TabellaprodottiComponent {
     )
     this.formModificaGiochi = formBuider.group(
       {
+        id : "",
         titolo : "",
         quantitamagazzino : "",
         prezzo : "",
@@ -454,7 +457,7 @@ submitModificaLibro(){
     }
   );
 
-  this.http.post<boolean>("http://localhost:8080/api/studente/updatelibro", body, {headers}).subscribe(risposta =>{
+  this.http.post<boolean>("http://localhost:8080/api/admin/updatelibro", body, {headers}).subscribe(risposta =>{
     if(risposta){
       alert("Modifica avvenuta con successo!");
       
@@ -487,7 +490,7 @@ submitModificaGioco(){
     }
   );
 
-  this.http.post<boolean>("http://localhost:8080/api/studente/updategioco", body, {headers}).subscribe(risposta =>{
+  this.http.post<boolean>("http://localhost:8080/api/admin/updategioco", body, {headers}).subscribe(risposta =>{
     if(risposta){
       alert("Modifica avvenuta con successo!");
       
@@ -520,7 +523,7 @@ submitModificaDisco(){
     }
   );
 
-  this.http.post<boolean>("http://localhost:8080/api/studente/updatedisco", body, {headers}).subscribe(risposta =>{
+  this.http.post<boolean>("http://localhost:8080/api/admin/updatedisco", body, {headers}).subscribe(risposta =>{
     if(risposta){
       alert("Modifica avvenuta con successo!");
       
