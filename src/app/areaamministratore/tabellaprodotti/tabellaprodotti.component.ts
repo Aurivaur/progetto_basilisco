@@ -46,7 +46,7 @@ export class TabellaprodottiComponent {
         quantita : "",
         prezzo : "",
         editore : "",
-        annoPubblicazione : "",
+        annopubblicazione : "",
         descrizione : "",
         autore : "",
         genere : "",
@@ -56,14 +56,14 @@ export class TabellaprodottiComponent {
     this.formInserisciLibri = formBuider.group(
       {
         titolo : "",
-        quantita : "",
+        quantitamagazzino : "",
         prezzo : "",
         editore : "",
-        annoPubblicazione : "",
+        annopubblicazione : "",
         descrizione : "",
         autore : "",
         genere : "",
-        numeroPagine : ""
+        numeropagine : ""
       }
     )
     this.formInserisciGiochi = formBuider.group(
@@ -72,7 +72,7 @@ export class TabellaprodottiComponent {
         quantita : "",
         prezzo : "",
         editore : "",
-        annoPubblicazione : "",
+        annopubblicazione : "",
         descrizione : "",
         minEta : "",
         minGiocatori : "",

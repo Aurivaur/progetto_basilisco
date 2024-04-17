@@ -73,11 +73,11 @@ export class TabellautentiComponent {
   //INSERT UTENTE
   submitInserisciUtente(){
 
-    const nome = this.formInserisciUtente.get('nome')!.value;
-    const cognome = this.formInserisciUtente.get('cognome')!.value;
+    const nome = this.formInserisciUtente.get('nome')!.value + "";
+    const cognome = this.formInserisciUtente.get('cognome')!.value + "";
 
     // concatena nome e cognome
-    const defaultUsername = '${nome}.${cognome}';
+    const defaultUsername = nome.toLowerCase() + "." + cognome.toLowerCase();
 
     // imposta username default
     this.formInserisciUtente.get('username')!.setValue(defaultUsername)
