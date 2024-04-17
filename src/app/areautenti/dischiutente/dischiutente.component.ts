@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class DischiutenteComponent {
 
+
+  back(){
+    
+    window.location.href="/areautente";
+  }
 }

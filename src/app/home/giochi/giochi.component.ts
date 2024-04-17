@@ -36,4 +36,9 @@ export class GiochiComponent {
 
   }
 
+  back(){
+    
+    window.location.href="/home";
+  }
+
 }

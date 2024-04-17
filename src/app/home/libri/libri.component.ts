@@ -37,4 +37,8 @@ export class LibriComponent {
 
   }
 
+  back(){
+    
+    window.location.href="/home";
+  }
 }

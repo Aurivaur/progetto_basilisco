@@ -37,4 +37,9 @@ export class DischiComponent {
 
   }
 
+  back(){
+    
+    window.location.href="/home";
+  }
+
 }
