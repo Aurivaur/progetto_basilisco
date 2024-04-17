@@ -17,7 +17,7 @@ export class GiochiComponent {
   }
 
   //SISTEMARE HTTP
-  getAllLibri(){
+  getAllGiochi(){
     let token = sessionStorage.getItem("token");
     if(token == null){
       token = "";

@@ -96,6 +96,19 @@ export class AreautenteComponent {
     this.isCarrello = !this.isCarrello;
   }
 
+  //BOTTONI LISTE
+  arealibriu(){
+    
+    window.location.href="/arealibriutenti";
+  }
+  areadischiu(){
+    
+    window.location.href="/areadischiutenti";
+  }
+  areagiochiu(){
+    
+    window.location.href="/areagiochiutenti";
+  }
 
   
   //LOGOUT

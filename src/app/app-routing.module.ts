@@ -8,6 +8,9 @@ import { LibriComponent } from './home/libri/libri.component';
 import { DischiComponent } from './home/dischi/dischi.component';
 import { GiochiComponent } from './home/giochi/giochi.component';
 import { HomeComponent } from './home/home.component';
+import { LibriutenteComponent } from './areautenti/libriutente/libriutente.component';
+import { GiochiutenteComponent } from './areautenti/giochiutente/giochiutente.component';
+import { DischiutenteComponent } from './areautenti/dischiutente/dischiutente.component';
 
 const routes: Routes = [
   {
@@ -43,6 +46,18 @@ const routes: Routes = [
   {
     path : 'home',
     component : HomeComponent
+  },
+  {
+    path: 'arealibriutenti',
+    component : LibriutenteComponent
+  },
+  {
+    path: 'areagiochiutenti',
+    component : GiochiutenteComponent
+  },
+  {
+    path: 'areadischiutenti',
+    component : DischiutenteComponent
   }
 
 ];

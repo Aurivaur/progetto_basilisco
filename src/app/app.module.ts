@@ -15,6 +15,9 @@ import { RegformComponent } from './regform/regform.component';
 import { LibriComponent } from './home/libri/libri.component';
 import { DischiComponent } from './home/dischi/dischi.component';
 import { GiochiComponent } from './home/giochi/giochi.component';
+import { LibriutenteComponent } from './areautenti/libriutente/libriutente.component';
+import { DischiutenteComponent } from './areautenti/dischiutente/dischiutente.component';
+import { GiochiutenteComponent } from './areautenti/giochiutente/giochiutente.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { GiochiComponent } from './home/giochi/giochi.component';
     RegformComponent,
     LibriComponent,
     DischiComponent,
-    GiochiComponent
+    GiochiComponent,
+    LibriutenteComponent,
+    DischiutenteComponent,
+    GiochiutenteComponent
   ],
   imports: [
     BrowserModule,

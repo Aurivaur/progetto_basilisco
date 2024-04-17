@@ -1,5 +1,44 @@
 
 <h5>LISTA DEI LIBRI</h5>
+<!--MODIFICA LIBRI-->
+<div *ngIf="isModificaLibro" class="modal">
+    <h4>Modifica Libro</h4>
+    <button (click)="toggleModificaLibri()">CHIUDI</button>
+    <form [formGroup]="formModificaLibri" (ngSubmit)="submitModificaLibro()">
+        <input type="hidden" formControlName="id">
+
+        <label for="titolo">Titolo: </label>
+        <input type="text" name="titolo" formControlName="titolo">
+        <br>
+        <label for="quantitamagazzino">Quantità: </label>
+        <input type="number" name="quantitamagazzino" formControlName="quantitamagazzino">
+        <br>
+        <label for="prezzo">Prezzo: </label>
+        <input type="number" name="prezzo" formControlName="prezzo">
+        <br>
+        <label for="editore">Editore: </label>
+        <input type="text" name="editore" formControlName="editore">
+        <br>
+        <label for="annopubblicazione">Anno di Pubblicazione: </label>
+        <input type="number" name="annopubblicazione" formControlName="annopubblicazione">
+        <br>
+        <label for="descrizione">Descrizione: </label>
+        <input type="text" name="descrizione" formControlName="descrizione">
+        <br>
+        <label for="autore">Autore: </label>
+        <input type="text" name="autore" formControlName="autore">
+        <br>
+        <label for="genere">Genere: </label>
+        <input type="text" name="genere" formControlName="genere">
+        <br>
+        <label for="numeropagine">Numero Pagine: </label>
+        <input type="number" name="numeropagine" formControlName="numeropagine">
+        <br>
+        <input type="submit" value="SUBMIT: Modifica Libro">
+    </form>
+</div>
+
+<!--INSERISCI LIBRO-->
 <br><div *ngIf="isInserisciLibro" class="modal">
     <h4>Inserisci nuovo Libro</h4>
     <button (click)="toggleInsertLibri()">CHIUDI</button>
@@ -59,6 +98,7 @@
     <td>{{l.prezzo}}</td>
     <td>{{l.descrizione}}</td>
     <td><button (click)="deleteLibri(l.id)">Elimina</button></td> 
+    <td><button (click)="modificaLibro(l)">Modifica</button></td>
        
 </tr>
 </tbody>
@@ -67,6 +107,44 @@
 <button (click)="toggleVediLibri()" *ngIf="!isLibro">Vedi Lista Libri</button>
 
 <h5>LISTA DEI GIOCHI</h5>
+<!--MODIFICA GIOCHI-->
+<div *ngIf="isModificaGioco" class="modal">
+    <h4>Modifica Gioco</h4>
+    <button (click)="toggleModificaGiochi()">CHIUDI</button>
+    <form [formGroup]="formModificaGiochi" (ngSubmit)="submitModificaGioco()">
+        <input type="hidden" formControlName="id">
+
+        <label for="titolo">Titolo: </label>
+        <input type="text" name="titolo" formControlName="titolo">
+        <br>
+        <label for="quantitamagazzino">Quantità: </label>
+        <input type="number" name="quantitamagazzino" formControlName="quantitamagazzino">
+        <br>
+        <label for="prezzo">Prezzo: </label>
+        <input type="number" name="prezzo" formControlName="prezzo">
+        <br>
+        <label for="editore">Editore: </label>
+        <input type="text" name="editore" formControlName="editore">
+        <br>
+        <label for="annopubblicazione">Anno di Pubblicazione: </label>
+        <input type="number" name="annopubblicazione" formControlName="annopubblicazione">
+        <br>
+        <label for="descrizione">Descrizione: </label>
+        <input type="text" name="descrizione" formControlName="descrizione">
+        <br>
+        <label for="minEta">Età Minima: </label>
+        <input type="number" name="minEta" formControlName="etaminima"><br>
+        <label for="minGiocatori">Numero Giocatori minimo: </label>
+        <input type="number" name="minGiocatori" formControlName="mingiocatori"><br>
+        <label for="maxGiocatori">Numero Giocatori massimo: </label>
+        <input type="number" name="maxGiocatori" formControlName="maxgiocatori"><br>
+        <label for="durata">Durata: </label>
+        <input type="number" name="durata" formControlName="durata"><br>
+        <input type="submit" value="SUBMIT: Modifica Disco">
+    </form>
+</div>
+
+<!--INSERISCI GIOCHI-->
 <br><div *ngIf="isInserisciGioco" class="modal">
     <h4>Inserisci nuovo Gioco</h4>
     <button (click)="toggleInsertGiochi()">CHIUDI</button>
@@ -131,6 +209,7 @@
     <td>{{l.durata}}</td>
     <td>{{l.descrizione}}</td> 
     <td><button (click)="deleteGiochi(l.id)">Elimina</button></td>
+    <td><button (click)="modificaGioco(l)">Modifica</button></td>
        
 </tr>
 </tbody>
@@ -139,6 +218,7 @@
 <button (click)="toggleVediGiochi()" *ngIf="!isGioco">Vedi Lista Giochi</button>
 
 <h5>LISTA DEI DISCHI</h5>
+<!--MODIFICA DISCHI-->
 <div *ngIf="isModificaDisco" class="modal">
     <h4>Modifica Disco</h4>
     <button (click)="toggleModificaDischi()">CHIUDI</button>
