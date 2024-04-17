@@ -137,7 +137,7 @@ export class TabellaprodottiComponent {
       }
     );
 
-    const params = new HttpParams().set('idAdmin', id);
+    const params = new HttpParams().set('idGioco', id);
 
     this.http.get<boolean>("http://localhost:8080/api/admin/delete", {headers, params}).subscribe(risposta =>{
       if(risposta){
