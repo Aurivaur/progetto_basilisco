@@ -72,11 +72,11 @@ export class TabellautentiComponent {
   //INSERT UTENTE
   submitInserisciUtente(){
 
-    const nome = this.formInserisciUtente.get('nome')!.value;
-    const cognome = this.formInserisciUtente.get('cognome')!.value;
+    const nome = this.formInserisciUtente.get('nome')!.value + "";
+    const cognome = this.formInserisciUtente.get('cognome')!.value + "";
 
     // concatena nome e cognome
-    const defaultUsername = '${nome}.${cognome}';
+    const defaultUsername = nome.toLowerCase() + "." + cognome.toLowerCase();
 
     // imposta username default
     this.formInserisciUtente.get('username')!.setValue(defaultUsername)
@@ -97,7 +97,7 @@ export class TabellautentiComponent {
       }
     );
   
-    this.http.post<Utente>("http://localhost:8080/api/admin/insert", body, {headers}).subscribe(risposta =>{
+    this.http.post<Utente>("http://localhost:8080/api/admin/insertutente", body, {headers}).subscribe(risposta =>{
   
       if(!risposta){
         alert("Errore durante l'esecuzione della richiesta");
