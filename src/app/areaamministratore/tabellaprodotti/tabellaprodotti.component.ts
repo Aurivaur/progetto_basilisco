@@ -43,7 +43,7 @@ export class TabellaprodottiComponent {
     this.formInserisciDischi = formBuider.group(
       {
         titolo : "",
-        quantita : "",
+        quantitamagazzino : "",
         prezzo : "",
         editore : "",
         annopubblicazione : "",
@@ -69,14 +69,14 @@ export class TabellaprodottiComponent {
     this.formInserisciGiochi = formBuider.group(
       {
         titolo : "",
-        quantita : "",
+        quantitamagazzino : "",
         prezzo : "",
         editore : "",
         annopubblicazione : "",
         descrizione : "",
-        minEta : "",
-        minGiocatori : "",
-        maxGiocatori : "",
+        etaminima : "",
+        mingiocatori : "",
+        maxgiocatori : "",
         durata : ""
       }
     )
