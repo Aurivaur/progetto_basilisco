@@ -23,7 +23,7 @@ export class TabellautentiComponent {
       {
         nome : "",
         cognome : "",
-        dataNascita : "",
+        datanascita : "",
         email : "",
         ruolo : "",
         username : "",
@@ -72,18 +72,17 @@ export class TabellautentiComponent {
   //INSERT UTENTE
   submitInserisciUtente(){
 
+    const nome = this.formInserisciUtente.get('nome')!.value;
+    const cognome = this.formInserisciUtente.get('cognome')!.value;
+
+    // concatena nome e cognome
+    const defaultUsername = '${nome}.${cognome}';
+
+    // imposta username default
+    this.formInserisciUtente.get('username')!.setValue(defaultUsername)
+
     const formValues = this.formInserisciUtente?.value;
-
-    let nomeutente = this.formInserisciUtente.get('nome');
-
-    this.formInserisciUtente.patchValue(
-      {
-        username : nomeutente,
-        password : "1234"
-      }
-    )
   
-    //jsonifica i dati
     const body = JSON.stringify(formValues);
   
     let token = sessionStorage.getItem("token");
@@ -98,7 +97,7 @@ export class TabellautentiComponent {
       }
     );
   
-    this.http.post<Utente>("http://localhost:8080/api/admin/insertutente", body, {headers}).subscribe(risposta =>{
+    this.http.post<Utente>("http://localhost:8080/api/admin/insert", body, {headers}).subscribe(risposta =>{
   
       if(!risposta){
         alert("Errore durante l'esecuzione della richiesta");
@@ -111,7 +110,7 @@ export class TabellautentiComponent {
         {
           nome : "",
           cognome : "",
-          dataNascita : "",
+          datanascita : "",
           email : "",
           ruolo : "",
           username : "",
