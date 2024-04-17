@@ -1,25 +1,34 @@
-<div *ngIf="isInserisciLibro" class="modal">
-    <h4>Nuovo Studente</h4>
-    <button (click)="toggleInsertDischi()">CHIUDI</button>
-    <form [formGroup]="formInserisciDischi" (ngSubmit)="submitInserisciDischi()" >
-        <label for="titolo">Titolo</label>
-        <input type="text" name="titolo" formControlName="titolo"><br>
-        <label for="quantita">Quantità</label>
-        <input type="number" name="quantita" formControlName="quantita"><br>
-        <label for="datanascita">Data Nascita</label>
-        <input type="date" name="datanascita" formControlName="datanascita"><br>
-        <label for="username">Username</label>
-        <input type="text" name="username" formControlName="username"><br>
-        <label for="password">Password</label>
-        <input type="text" name="password" formControlName="password"><br>
-
-        <input type="submit" value="SUBMIT: Inserisci nuovo studente">
-    </form>
-</div>
-<button (click)="toggleInsertDischi()" *ngIf="!isInserisciDisco">Inserisci uno studente</button>
-
 
 <h5>LISTA DEI LIBRI</h5>
+<br><div *ngIf="isInserisciLibro" class="modal">
+    <h4>Inserisci nuovo Libro</h4>
+    <button (click)="toggleInsertLibri()">CHIUDI</button>
+    <form [formGroup]="formInserisciLibri" (ngSubmit)="submitInserisciLibri()" >
+        <label for="titolo">Titolo: </label>
+        <input type="text" name="titolo" formControlName="titolo"><br>
+        <label for="quantita">Quantità: </label>
+        <input type="number" name="quantita" formControlName="quantita"><br>
+        <label for="prezzo">Prezzo: </label>
+        <input type="number" name="prezzo" formControlName="prezzo"><br>
+        <label for="editore">Editore: </label>
+        <input type="text" name="editore" formControlName="editore"><br>
+        <label for="annoPubblicazione">Anno di Pubblicazione: </label>
+        <input type="number" name="annoPubblicazione" formControlName="annoPubblicazione"><br>
+        <label for="descrizione">Descrizione: </label>
+        <input type="text" name="descrizione" formControlName="descrizione"><br>
+        <label for="autore">Autore: </label>
+        <input type="text" name="autore" formControlName="autore"><br>
+        <label for="genere">Genere: </label>
+        <input type="text" name="genere" formControlName="genere"><br>
+        <label for="numeroPagine">Numero Pagine: </label>
+        <input type="number" name="numeroPagine" formControlName="numeroPagine"><br>
+
+        <input type="submit" value="SUBMIT: Inserisci nuovo libro">
+    </form>
+</div>
+<button (click)="toggleInsertLibri()" *ngIf="!isInserisciLibro">Inserisci un libro</button>
+
+<!--BOTTONE PER VEDERE LIBRI-->
 <div *ngIf="isLibro" class="modal">
 <button (click)="toggleVediLibri()">CHIUDI</button>
 <table>
@@ -45,7 +54,7 @@
     <td>{{l.genere}}</td> 
     <td>{{l.annoPubblicazione}}</td> 
     <td>{{l.editore}}</td> 
-    <td>{{l.nPagine}}</td> 
+    <td>{{l.numeroPagine}}</td> 
     <td>{{l.quantita}}</td> 
     <td>{{l.prezzo}}</td>
     <td>{{l.descrizione}}</td>
@@ -58,6 +67,37 @@
 <button (click)="toggleVediLibri()" *ngIf="!isLibro">Vedi Lista Libri</button>
 
 <h5>LISTA DEI GIOCHI</h5>
+<br><div *ngIf="isInserisciGioco" class="modal">
+    <h4>Inserisci nuovo Gioco</h4>
+    <button (click)="toggleInsertGiochi()">CHIUDI</button>
+    <form [formGroup]="formInserisciGiochi" (ngSubmit)="submitInserisciGiochi()" >
+        <label for="titolo">Titolo: </label>
+        <input type="text" name="titolo" formControlName="titolo"><br>
+        <label for="quantita">Quantità: </label>
+        <input type="number" name="quantita" formControlName="quantita"><br>
+        <label for="prezzo">Prezzo: </label>
+        <input type="number" name="prezzo" formControlName="prezzo"><br>
+        <label for="editore">Editore: </label>
+        <input type="text" name="editore" formControlName="editore"><br>
+        <label for="annoPubblicazione">Anno di Pubblicazione: </label>
+        <input type="number" name="annoPubblicazione" formControlName="annoPubblicazione"><br>
+        <label for="descrizione">Descrizione: </label>
+        <input type="text" name="descrizione" formControlName="descrizione"><br>
+        <label for="minEta">Età Minima: </label>
+        <input type="number" name="minEta" formControlName="minEta"><br>
+        <label for="minGiocatori">Numero Giocatori minimo: </label>
+        <input type="number" name="minGiocatori" formControlName="minGiocatori"><br>
+        <label for="maxGiocatori">Numero Giocatori massimo: </label>
+        <input type="number" name="maxGiocatori" formControlName="maxGiocatori"><br>
+        <label for="durata">Durata: </label>
+        <input type="number" name="durata" formControlName="durata"><br>
+
+        <input type="submit" value="SUBMIT: Inserisci nuovo gioco">
+    </form>
+</div>
+<button (click)="toggleInsertGiochi()" *ngIf="!isInserisciGioco">Inserisci un gioco</button>
+
+<!--BOTTONE PER VEDERE GIOCHI-->
 <div *ngIf="isGioco" class="modal">
 <button (click)="toggleVediGiochi()">CHIUDI</button>
 <table>
@@ -100,6 +140,35 @@
 <button (click)="toggleVediGiochi()" *ngIf="!isGioco">Vedi Lista Giochi</button>
 
 <h5>LISTA DEI DISCHI</h5>
+<br><div *ngIf="isInserisciDisco" class="modal">
+    <h4>Inserisci nuovo Disco</h4>
+    <button (click)="toggleInsertDischi()">CHIUDI</button>
+    <form [formGroup]="formInserisciDischi" (ngSubmit)="submitInserisciDischi()" >
+        <label for="titolo">Titolo: </label>
+        <input type="text" name="titolo" formControlName="titolo"><br>
+        <label for="quantita">Quantità: </label>
+        <input type="number" name="quantita" formControlName="quantita"><br>
+        <label for="prezzo">Prezzo: </label>
+        <input type="number" name="prezzo" formControlName="prezzo"><br>
+        <label for="editore">Editore: </label>
+        <input type="text" name="editore" formControlName="editore"><br>
+        <label for="annoPubblicazione">Anno di Pubblicazione: </label>
+        <input type="number" name="annoPubblicazione" formControlName="annoPubblicazione"><br>
+        <label for="descrizione">Descrizione: </label>
+        <input type="text" name="descrizione" formControlName="descrizione"><br>
+        <label for="autore">Autore: </label>
+        <input type="text" name="autore" formControlName="autore"><br>
+        <label for="genere">Genere: </label>
+        <input type="text" name="genere" formControlName="genere"><br>
+        <label for="durata">Durata: </label>
+        <input type="number" name="durata" formControlName="durata"><br>
+
+        <input type="submit" value="SUBMIT: Inserisci nuovo disco">
+    </form>
+</div>
+<button (click)="toggleInsertDischi()" *ngIf="!isInserisciDisco">Inserisci un disco</button>
+
+<!--BOTTONE PER VEDERE DISCHI-->
 <div *ngIf="isDisco" class="modal">
 <button (click)="toggleVediDischi()">CHIUDI</button>
 <table>

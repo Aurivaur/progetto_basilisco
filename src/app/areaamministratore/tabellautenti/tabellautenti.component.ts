@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Component, Input } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Utente } from 'src/models/Utente';
 
 @Component({
@@ -12,15 +12,34 @@ export class TabellautentiComponent {
 
   @Input() utenti? : Utente[];
 
+  formInserisciUtente : FormGroup;
+  isInserisciUtente = false;
+
   isUtente = false;
 
-  constructor(private http : HttpClient, private formBuider : FormBuilder){
+  constructor(private http : HttpClient, private formBuider : FormBuilder ){
     this.http = http;
+    this.formInserisciUtente = formBuider.group(
+      {
+        nome : "",
+        cognome : "",
+        dataNascita : "",
+        email : "",
+        ruolo : "",
+        username : "",
+        password : "1234"
+      }
+    )
   }
 
 
+  //TOGGLE
   toggleVediUtenti(){
     this.isUtente = !this.isUtente;
+  }
+
+  toggleInsertUtente(){
+    this.isInserisciUtente = !this.isInserisciUtente;
   }
 
   //CANCELLA UTENTI
@@ -48,7 +67,60 @@ export class TabellautentiComponent {
         }
       }
     })
+  }
 
+  //INSERT UTENTE
+  submitInserisciUtente(){
+
+    const formValues = this.formInserisciUtente?.value;
+
+    let nomeutente = this.formInserisciUtente.get('nome');
+
+    this.formInserisciUtente.patchValue(
+      {
+        username : nomeutente,
+        password : "1234"
+      }
+    )
+  
+    //jsonifica i dati
+    const body = JSON.stringify(formValues);
+  
+    let token = sessionStorage.getItem("token");
+    if(token == null){
+      token = "";
+    }
+  
+    const headers = new HttpHeaders(
+      {
+        'Content-Type' : 'application/json',
+        'token': token as string
+      }
+    );
+  
+    this.http.post<Utente>("http://localhost:8080/api/admin/insertutente", body, {headers}).subscribe(risposta =>{
+  
+      if(!risposta){
+        alert("Errore durante l'esecuzione della richiesta");
+      }
+      else{
+       this.utenti?.push(risposta);
+      }
+  
+      this.formInserisciUtente?.patchValue(
+        {
+          nome : "",
+          cognome : "",
+          dataNascita : "",
+          email : "",
+          ruolo : "",
+          username : "",
+          password : ""
+        }
+      )
+      this.toggleInsertUtente();
+    })
+    
   }
 
 }

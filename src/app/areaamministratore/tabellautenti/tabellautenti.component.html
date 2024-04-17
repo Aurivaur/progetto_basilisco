@@ -1,4 +1,25 @@
 <h5>LISTA DEGLI UTENTI</h5>
+<br><div *ngIf="isInserisciUtente" class="modal">
+    <h4>Inserisci nuovo Utente</h4>
+    <button (click)="toggleInsertUtente()">CHIUDI</button>
+    <form [formGroup]="formInserisciUtente" (ngSubmit)="submitInserisciUtente()" >
+        <label for="nome">Nome: </label>
+        <input type="text" name="nome" formControlName="nome"><br>
+        <label for="cognome">Cognome: </label>
+        <input type="text" name="cognome" formControlName="cognome"><br>
+        <label for="datanascita">Data di Nascita: </label>
+        <input type="date" name="datanascita" formControlName="datanascita"><br>
+        <label for="email">E-mail: </label>
+        <input type="text" name="email" formControlName="email"><br>
+        <label for="ruolo">Ruolo: </label>
+        <input type="number" name="ruolo" formControlName="ruolo"><br>
+
+        <input type="submit" value="SUBMIT: Inserisci nuovo disco">
+    </form>
+</div>
+<button (click)="toggleInsertUtente()" *ngIf="!isInserisciUtente">Inserisci un utente</button>
+
+<!--LISTA UTENTI-->
 <div *ngIf="isUtente" class="modal">
 <button (click)="toggleVediUtenti()">CHIUDI</button>
 <table>

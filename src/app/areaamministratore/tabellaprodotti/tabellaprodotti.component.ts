@@ -17,8 +17,8 @@ export class TabellaprodottiComponent {
   @Input() giochi? : Gioco[];
   @Input() dischi? : Disco[];
   formInserisciDischi : FormGroup;
-  formInserisciLibri? : FormGroup;
-  formInserisciGiochi? : FormGroup;
+  formInserisciLibri : FormGroup;
+  formInserisciGiochi : FormGroup;
   isLibro = false;
   isInserisciLibro = false;
   isGioco = false;
@@ -42,6 +42,34 @@ export class TabellaprodottiComponent {
         durata : ""
       }
     )
+    this.formInserisciLibri = formBuider.group(
+      {
+        titolo : "",
+        quantita : "",
+        prezzo : "",
+        editore : "",
+        annoPubblicazione : "",
+        descrizione : "",
+        autore : "",
+        genere : "",
+        numeroPagine : ""
+      }
+    )
+    this.formInserisciGiochi = formBuider.group(
+      {
+        titolo : "",
+        quantita : "",
+        prezzo : "",
+        editore : "",
+        annoPubblicazione : "",
+        descrizione : "",
+        minEta : "",
+        minGiocatori : "",
+        maxGiocatori : "",
+        durata : ""
+      }
+    )
+
   }
 
 
@@ -192,13 +220,111 @@ submitInserisciDischi(){
         durata : ""
       }
     )
+    this.toggleInsertDischi();
   })
-  this.toggleInsertDischi();
-
-
-
+  
 }
 
+
+
+
+
+
+
+
+submitInserisciLibri(){
+
+  const formValues = this.formInserisciLibri?.value;
+
+  //jsonifica i dati
+  const body = JSON.stringify(formValues);
+
+  let token = sessionStorage.getItem("token");
+  if(token == null){
+    token = "";
+  }
+
+  const headers = new HttpHeaders(
+    {
+      'Content-Type' : 'application/json',
+      'token': token as string
+    }
+  );
+
+  this.http.post<Libro>("http://localhost:8080/api/admin/insertlibro", body, {headers}).subscribe(risposta =>{
+
+    if(!risposta){
+      alert("Errore durante l'esecuzione della richiesta");
+    }
+    else{
+     this.libri?.push(risposta);
+    }
+
+    this.formInserisciLibri?.patchValue(
+      {
+        titolo : "",
+        quantita : "",
+        prezzo : "",
+        editore : "",
+        annoPubblicazione : "",
+        descrizione : "",
+        autore : "",
+        genere : "",
+        numeroPagine : ""
+      }
+    )
+    this.toggleInsertLibri();
+  })
+  
+}
+
+
+submitInserisciGiochi(){
+
+  const formValues = this.formInserisciGiochi?.value;
+
+  //jsonifica i dati
+  const body = JSON.stringify(formValues);
+
+  let token = sessionStorage.getItem("token");
+  if(token == null){
+    token = "";
+  }
+
+  const headers = new HttpHeaders(
+    {
+      'Content-Type' : 'application/json',
+      'token': token as string
+    }
+  );
+
+  this.http.post<Gioco>("http://localhost:8080/api/admin/insertgioco", body, {headers}).subscribe(risposta =>{
+
+    if(!risposta){
+      alert("Errore durante l'esecuzione della richiesta");
+    }
+    else{
+     this.giochi?.push(risposta);
+    }
+
+    this.formInserisciGiochi?.patchValue(
+      {
+        titolo : "",
+        quantita : "",
+        prezzo : "",
+        editore : "",
+        annoPubblicazione : "",
+        descrizione : "",
+        minEta : "",
+        minGiocatori : "",
+        maxGiocatori : "",
+        durata : ""
+      }
+    )
+    this.toggleInsertGiochi();
+  })
+  
+}
 
 
 
