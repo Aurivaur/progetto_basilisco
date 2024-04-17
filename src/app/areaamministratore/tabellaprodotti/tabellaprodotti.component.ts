@@ -82,6 +82,7 @@ export class TabellaprodottiComponent {
     )
     this.formModificaDischi = formBuider.group(
       {
+        id : "",
         titolo : "",
         quantitamagazzino : "",
         prezzo : "",
@@ -520,7 +521,7 @@ submitModificaDisco(){
     }
   );
 
-  this.http.post<boolean>("http://localhost:8080/api/studente/updatedisco", body, {headers}).subscribe(risposta =>{
+  this.http.post<boolean>("http://localhost:8080/api/admin/updatedisco", body, {headers}).subscribe(risposta =>{
     if(risposta){
       alert("Modifica avvenuta con successo!");
       
