@@ -13,6 +13,7 @@ export class TabellautentiComponent {
   @Input() utenti? : Utente[];
 
   formInserisciUtente : FormGroup;
+  formModificaUtente? : FormGroup;
   isInserisciUtente = false;
 
   isUtente = false;

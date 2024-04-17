@@ -139,6 +139,49 @@
 <button (click)="toggleVediGiochi()" *ngIf="!isGioco">Vedi Lista Giochi</button>
 
 <h5>LISTA DEI DISCHI</h5>
+<div *ngIf="isModificaDisco" class="modal">
+    <h4>Modifica Disco</h4>
+    <button (click)="toggleModificaDischi()">CHIUDI</button>
+    <form [formGroup]="formModificaDischi" (ngSubmit)="submitModificaDisco()">
+        <input type="hidden" formControlName="id">
+
+        <label for="titolo">Titolo: </label>
+        <input type="text" name="titolo" formControlName="titolo">
+        <br>
+        <label for="quantitamagazzino">Quantità: </label>
+        <input type="number" name="quantitamagazzino" formControlName="quantitamagazzino">
+        <br>
+        <label for="prezzo">Prezzo: </label>
+        <input type="number" name="prezzo" formControlName="prezzo">
+        <br>
+        <label for="editore">Editore: </label>
+        <input type="text" name="editore" formControlName="editore">
+        <br>
+        <label for="annopubblicazione">Anno di Pubblicazione: </label>
+        <input type="number" name="annopubblicazione" formControlName="annopubblicazione">
+        <br>
+        <label for="descrizione">Descrizione: </label>
+        <input type="text" name="descrizione" formControlName="descrizione">
+        <br>
+        <label for="autore">Autore: </label>
+        <input type="text" name="autore" formControlName="autore">
+        <br>
+        <label for="genere">Genere: </label>
+        <input type="text" name="genere" formControlName="genere">
+        <br>
+        <label for="durata">Durata: </label>
+        <input type="number" name="durata" formControlName="durata">
+        <br>
+
+
+        <label for="datanascita">Data nascita: </label>
+        <input type="date" name="datanascita" formControlName="datanascita">
+        <br>
+        <input type="submit" value="SUBMIT: Modifica Disco">
+    </form>
+</div>
+
+<!--INSERISCI DISCO-->
 <br><div *ngIf="isInserisciDisco" class="modal">
     <h4>Inserisci nuovo Disco</h4>
     <button (click)="toggleInsertDischi()">CHIUDI</button>
