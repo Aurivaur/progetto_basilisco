@@ -1,10 +1,10 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Component, Input } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Disco } from 'src/models/Disco';
 import { Gioco } from 'src/models/Gioco';
 import { Libro } from 'src/models/Libro';
-import { Utente } from 'src/models/Utente';
+
 
 @Component({
   selector: 'app-tabellaprodotti',
@@ -16,28 +16,57 @@ export class TabellaprodottiComponent {
   @Input() libri? : Libro[];
   @Input() giochi? : Gioco[];
   @Input() dischi? : Disco[];
+  formInserisciDischi : FormGroup;
+  formInserisciLibri? : FormGroup;
+  formInserisciGiochi? : FormGroup;
+  isLibro = false;
+  isInserisciLibro = false;
+  isGioco = false;
+  isInserisciGioco = false;
+  isDisco = false;
+  isInserisciDisco = false;
+
 
   constructor(private http : HttpClient, private formBuider : FormBuilder){
     this.http = http;
+    this.formInserisciDischi = formBuider.group(
+      {
+        titolo : "",
+        quantita : "",
+        prezzo : "",
+        editore : "",
+        annoPubblicazione : "",
+        descrizione : "",
+        autore : "",
+        genere : "",
+        durata : ""
+      }
+    )
   }
 
 
-  isLibro = false;
-  
+  //TOGGLE PULSANTI
   toggleVediLibri(){
     this.isLibro = !this.isLibro;
   }
 
-  isGioco = false;
-  
+  toggleInsertLibri(){
+    this.isInserisciLibro = !this.isInserisciLibro;
+  }
+
   toggleVediGiochi(){
     this.isGioco = !this.isGioco;
   }
+  toggleInsertGiochi(){
+    this.isInserisciGioco = !this.isInserisciGioco;
+  }
 
-  isDisco = false;
-  
   toggleVediDischi(){
     this.isDisco = !this.isDisco;
+  }
+
+  toggleInsertDischi(){
+    this.isInserisciDisco = !this.isInserisciDisco;
   }
 
   //ELIMINAZIONE VARI PRODOTTI
@@ -119,8 +148,56 @@ export class TabellaprodottiComponent {
         }
       }
     })
-
   }
+
+//AGGIUNGI PRODOTTI VARI
+submitInserisciDischi(){
+
+  const formValues = this.formInserisciDischi?.value;
+
+  //jsonifica i dati
+  const body = JSON.stringify(formValues);
+
+  let token = sessionStorage.getItem("token");
+  if(token == null){
+    token = "";
+  }
+
+  const headers = new HttpHeaders(
+    {
+      'Content-Type' : 'application/json',
+      'token': token as string
+    }
+  );
+
+  this.http.post<Disco>("http://localhost:8080/api/admin/insertdisco", body, {headers}).subscribe(risposta =>{
+
+    if(!risposta){
+      alert("Errore durante l'esecuzione della richiesta");
+    }
+    else{
+     this.dischi?.push(risposta);
+    }
+
+    this.formInserisciDischi?.patchValue(
+      {
+        titolo : "",
+        quantita : "",
+        prezzo : "",
+        editore : "",
+        annoPubblicazione : "",
+        descrizione : "",
+        autore : "",
+        genere : "",
+        durata : ""
+      }
+    )
+  })
+  this.toggleInsertDischi();
+
+
+
+}
 
 
 

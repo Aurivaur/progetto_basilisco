@@ -23,7 +23,7 @@ export class RegformComponent {
         nome : "",
         cognome : "",
         datanascita : "",
-        mail :"",
+        email :"",
         username : "",
         password : ""
       }
@@ -64,13 +64,13 @@ export class RegformComponent {
           nome : "",
           cognome : "",
           datanascita : "",
-          mail : "",
+          email : "",
           username : "",
           password : "",
         }
       )
 
-      window.location.href="/areautente";
+      window.location.href="/home";
 
       
     })

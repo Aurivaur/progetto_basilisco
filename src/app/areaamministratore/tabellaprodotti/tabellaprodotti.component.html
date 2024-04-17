@@ -1,3 +1,23 @@
+<div *ngIf="isInserisciLibro" class="modal">
+    <h4>Nuovo Studente</h4>
+    <button (click)="toggleInsertDischi()">CHIUDI</button>
+    <form [formGroup]="formInserisciDischi" (ngSubmit)="submitInserisciDischi()" >
+        <label for="titolo">Titolo</label>
+        <input type="text" name="titolo" formControlName="titolo"><br>
+        <label for="quantita">Quantità</label>
+        <input type="number" name="quantita" formControlName="quantita"><br>
+        <label for="datanascita">Data Nascita</label>
+        <input type="date" name="datanascita" formControlName="datanascita"><br>
+        <label for="username">Username</label>
+        <input type="text" name="username" formControlName="username"><br>
+        <label for="password">Password</label>
+        <input type="text" name="password" formControlName="password"><br>
+
+        <input type="submit" value="SUBMIT: Inserisci nuovo studente">
+    </form>
+</div>
+<button (click)="toggleInsertDischi()" *ngIf="!isInserisciDisco">Inserisci uno studente</button>
+
 
 <h5>LISTA DEI LIBRI</h5>
 <div *ngIf="isLibro" class="modal">

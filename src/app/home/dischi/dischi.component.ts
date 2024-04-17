@@ -18,7 +18,7 @@ export class DischiComponent {
   }
 
   //SISTEMARE HTTP
-  getAllLibri(){
+  getAllDischi(){
     let token = sessionStorage.getItem("token");
     if(token == null){
       token = "";

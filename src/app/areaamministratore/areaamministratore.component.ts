@@ -31,7 +31,6 @@ export class AreaamministratoreComponent {
     this.http = http;
     this.checkLogin();
   }
-
   //LISTA UTENTI, ADMIN E PRODOTTI VISIBILI DALL'ADMIN
   getAllUtenti(){
     let token = sessionStorage.getItem("token");
