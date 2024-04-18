@@ -14,11 +14,7 @@
   <!--CARRELLO-->
 <div class="button-86" role="button" *ngIf="isCarrello" class="modal">
     <button (click)="toggleVediCarrello()">CHIUDI</button><br>
-        
-        <!--<div *ngFor="let p of prodotto">-->
-           Prodotto: 
-        <!--</div>-->
-    
+    <button (click)="checkout()">PAGA</button>
 </div>
 <button class="button-86" role="button" (click)="logout()">LOGOUT</button>
 <button class="button-86" role="button" (click)="toggleVediCarrello()" *ngIf="!isCarrello">CARRELLO</button>

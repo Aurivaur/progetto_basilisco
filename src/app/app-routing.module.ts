@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { LibriutenteComponent } from './areautente/libriutente/libriutente.component';
 import { GiochiutenteComponent } from './areautente/giochiutente/giochiutente.component';
 import { DischiutenteComponent } from './areautente/dischiutente/dischiutente.component';
+import { CarrelloComponent } from './areautente/carrello/carrello.component';
 
 const routes: Routes = [
   {
@@ -58,6 +59,10 @@ const routes: Routes = [
   {
     path: 'areadischiutenti',
     component : DischiutenteComponent
+  },
+  {
+    path: 'carrello',
+    component : CarrelloComponent
   }
 
 ];

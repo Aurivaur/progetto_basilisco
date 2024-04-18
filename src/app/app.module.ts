@@ -18,6 +18,7 @@ import { GiochiComponent } from './home/giochi/giochi.component';
 import { DischiutenteComponent } from './areautente/dischiutente/dischiutente.component';
 import { GiochiutenteComponent } from './areautente/giochiutente/giochiutente.component';
 import { LibriutenteComponent } from './areautente/libriutente/libriutente.component';
+import { CarrelloComponent } from './areautente/carrello/carrello.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { LibriutenteComponent } from './areautente/libriutente/libriutente.compo
     GiochiComponent,
     DischiutenteComponent,
     GiochiutenteComponent,
-    LibriutenteComponent
+    LibriutenteComponent,
+    CarrelloComponent
     
   ],
   imports: [

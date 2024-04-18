@@ -179,6 +179,11 @@ export class AreautenteComponent {
     window.location.href="/areagiochiutenti";
   }
 
+  //CHECKOUT
+  checkout() {
+    window.location.href="/carrello";
+  }
+
   
   //LOGOUT
   logout(){
