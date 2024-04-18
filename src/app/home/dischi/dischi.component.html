@@ -7,11 +7,18 @@
         <div id="cover">
             <img src="../../../assets/images/dischi/id{{d.id}}.jpg" alt="">
         </div>
-        <div id="detail">
+        <div id="scheda">
             <h2> {{d.titolo}} </h2>
             <h3> Autore: {{d.autore}} </h3>
             <h3> Genere: {{d.genere}} </h3>
             <h3> Prezzo: {{d.prezzo}} € </h3>
+            <button *ngIf="!(selected == d.id)" (click)="dettaglio(d.id)">dettaglio</button>
+            <button *ngIf="selected == d.id" (click)="chiudi()">chiudi</button>
+        </div>
+        <div id="dettaglio">
+            <h2 *ngIf="selected == d.id"> Dettaglio: </h2>
+            <h3 *ngIf="selected == d.id"> Anno: {{d.annoPubblicazione}} </h3>
+            <h3 *ngIf="selected == d.id"> Descrizione: {{d.descrizione}} </h3>
         </div>
     </div>
 </div>

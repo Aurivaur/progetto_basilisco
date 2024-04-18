@@ -11,6 +11,7 @@ import { Disco } from 'src/models/Disco';
 export class DischiComponent {
 
   @Input() dischi? : Disco[];
+  selected : number = -1;
 
   constructor(private http : HttpClient)
   {
@@ -40,6 +41,14 @@ export class DischiComponent {
 
   back(){
     window.location.href="/home";
+  }
+
+  dettaglio(id : number){
+    this.selected = id;
+  }
+
+  chiudi() {
+    this.selected = -1;
   }
 
 }
