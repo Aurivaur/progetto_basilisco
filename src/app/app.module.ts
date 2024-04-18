@@ -19,6 +19,7 @@ import { DischiutenteComponent } from './areautente/dischiutente/dischiutente.co
 import { GiochiutenteComponent } from './areautente/giochiutente/giochiutente.component';
 import { LibriutenteComponent } from './areautente/libriutente/libriutente.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +36,7 @@ import { LibriutenteComponent } from './areautente/libriutente/libriutente.compo
     DischiutenteComponent,
     GiochiutenteComponent,
     LibriutenteComponent
+
     
   ],
   imports: [
