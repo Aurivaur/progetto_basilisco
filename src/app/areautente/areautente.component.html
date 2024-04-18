@@ -1,16 +1,17 @@
 <!--DATI PERSONALI-->
 <div class="modal" role="button" *ngIf="isDatiPersonali">
-    <button (click)="toggleVediDati()">CHIUDI</button><div id="logoDatiP"><img src="assets/images/logoBa.jpg" height="40px" width="40px"/></div>
-    
-    <p>
-       Nome: {{user?.nome}}<br>
-       Cognome: {{user?.cognome}}<br>
-       Data di Nascita: {{user?.dataNascita}}<br>
-       Mail: {{user?.email}}<br>
-       Indirizzo di Fatturazione: {{user?.indirizzoFatturazione}}<br>
-       Indirizzo di Spedizione: {{user?.indirizzoSpedizione}}<br>
-       Metodo di pagamento: {{user?.metodoPagamento}}<br>
-    </p></div>
+    <button (click)="toggleVediDati()">CHIUDI</button><div id="logoDatiP"><img src="assets/images/logoBa.jpg" height="45px" width="40px"/></div>
+    <br>
+    <div id="dati">
+        <br>
+        Nome: {{user?.nome}}<br>
+        Cognome: {{user?.cognome}}<br>
+        Data di Nascita: {{user?.dataNascita}}<br>
+        Mail: {{user?.email}}<br>
+        Indirizzo di Fatturazione: {{user?.indirizzoFatturazione}}<br>
+        Indirizzo di Spedizione: {{user?.indirizzoSpedizione}}<br>
+        Metodo di pagamento: {{user?.metodoPagamento}}<br>
+    </div></div>
   <!--CARRELLO-->
 <div class="button-86" role="button" *ngIf="isCarrello" class="modal">
     <button (click)="toggleVediCarrello()">CHIUDI</button><br>

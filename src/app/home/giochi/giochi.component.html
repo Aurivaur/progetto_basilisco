@@ -12,8 +12,8 @@
             <h3> Editore: {{g.editore}} </h3>
             <h3> Eta' consigliata: {{g.minEta}}</h3>
             <h3> Prezzo: {{g.prezzo}} € </h3>
-            <button *ngIf="!(selected == g.id)" (click)="dettaglio(g.id)">dettaglio</button>
-            <button *ngIf="selected == g.id" (click)="chiudi()">chiudi</button>
+            <button *ngIf="!(selected == g.id)" (click)="dettaglio(g.id)">Dettaglio</button>
+            <button *ngIf="selected == g.id" (click)="chiudi()">Chiudi</button>
         </div>
         <div id="dettaglio">
             <h2 *ngIf="selected == g.id"> Dettaglio: </h2>
