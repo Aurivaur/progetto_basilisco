@@ -1,2 +1,20 @@
 <div>
-    <button class="button-87" role="button" (click)="back()">TORNA ALL'AREA UTENTE</button><br></div>
+    <h1>Collezione Dischi</h1>
+    <br>
+</div>
+<div>
+    <div *ngFor="let d of dischi" id="element">
+        <div id="cover">
+            <img src="../../../assets/images/dischi/id{{d.id}}.jpg" alt="">
+        </div>
+        <div id="detail">
+            <h2> {{d.titolo}} </h2>
+            <h3> Autore: {{d.autore}} </h3>
+            <h3> Genere: {{d.genere}} </h3>
+            <h3> Prezzo: {{d.prezzo}} € </h3>
+        </div>
+    </div>
+</div>
+<div>
+    <button class="button-87" role="button" (click)="back()">HOME</button><br>
+</div>

@@ -15,6 +15,7 @@ export class DischiComponent {
   constructor(private http : HttpClient)
   {
     this.http = http;
+    this.getAllDischi();
   }
 
   //SISTEMARE HTTP
@@ -38,7 +39,6 @@ export class DischiComponent {
   }
 
   back(){
-    
     window.location.href="/home";
   }
 
