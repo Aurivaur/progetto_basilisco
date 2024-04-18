@@ -19,3 +19,9 @@ h1 {
 #dettaglio {
     padding-left: 20px;
 }
+#back
+{
+    padding: 20px; 
+    display: flex;
+    justify-content: right;
+}
