@@ -98,3 +98,58 @@ h1{
   border: 2px solid black;
   z-index: 9999;
 }  
+#logoDatiP
+{
+  position: absolute;
+  top: 10px;
+  bottom: 50px;
+  left: 160px
+
+}
+
+
+#libri{
+width: 500px;
+height: 300px;
+background-color: #FF0000;
+background-image: image-set('assets/images/libri.jpg');
+background-repeat: no-repeat;
+background-position: center center;
+font-size: 100px;
+color: rgb(0, 133, 55);
+}
+#giochi{
+width: 500px;
+height: 300px;
+background-color: #FF0000;
+background-image: image-set('assets/images/giochi.jpg');
+background-repeat: no-repeat;
+background-position: center center;
+font-size: 100px;
+color: rgb(0, 133, 55);
+}
+#dischi{
+width: 500px;
+height: 300px;
+background-color: #FF0000;
+background-image: image-set('assets/images/vinili.jpg');
+background-repeat: no-repeat;
+background-position: center center;
+font-size: 100px;
+color: rgb(0, 133, 55);
+}
+
+.bottoniiniziali{
+display: flex;
+}
+
+.recentitotale{
+display: flex;
+}
+
+.recentidiv
+{
+width: 60%;
+justify-content: center;
+text-align: center;
+}

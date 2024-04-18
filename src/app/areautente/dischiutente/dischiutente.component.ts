@@ -11,10 +11,13 @@ export class DischiutenteComponent {
   
   
   @Input() dischi? : Disco[];
+  selected : number = -1;
+
 
   constructor(private http : HttpClient)
   {
     this.http = http;
+    this.getAllDischi();
   }
 
   //SISTEMARE HTTP
@@ -39,6 +42,13 @@ export class DischiutenteComponent {
 
 
   //REINDIRIZZAMENTO
+  dettaglio(id : number){
+    this.selected = id;
+  }
+
+  chiudi() {
+    this.selected = -1;
+  }
   back(){
     
     window.location.href="/areautente";

@@ -1,3 +1,5 @@
+<body>
+    
 
 <button class="button-86" role="button" (click)="login()" *ngIf="!isLogin">ACCEDI</button><br>
 <br><button class="button-86" role="button" (click)="registrazione()">REGISTRATI</button>
@@ -5,38 +7,40 @@
 <br>
 <div id="logo"><img src="assets/images/logoBa.jpg" height="100px" width="90px"/></div>
 <h1>E-COMMERCE BASILISKO</h1>
-<div>
-<button class="button-87" role="button" (click)="arealibri()">LIBRI</button><br> 
-<button class="button-87" role="button" (click)="areadischi()">DISCHI</button><br> 
-<button class="button-87" role="button" (click)="areagiochi()">GIOCHI</button><br> 
-<div>
-    <p *ngFor="let l of libri">
-        Id: {{l.id}} <br>
-        Titolo: {{l.titolo}} <br>
-        Autore : {{l.autore}}<br>
-    Anno Pubblicazione : {{l.annoPubblicazione}}
-    </p>
-    <button class="button-87" role="button" (click)="arealibri()">LIBRI</button><br>
+<div class="bottoniiniziali">
+<div><button id="libri" role="button" (click)="arealibri()">LIBRI</button> </div>
+<div><button id="dischi" role="button" (click)="areadischi()">DISCHI</button></div>
+<div><button id="giochi" role="button" (click)="areagiochi()">GIOCHI</button></div>
+</div>
+<div class="recentitotale">
+    <div class="recentidiv">
+        <div *ngFor="let l of libri">
+            <h4>{{l.titolo}}</h4>
+            Autore: {{l.autore}}<br>
+            Anno Pubblicazione: {{l.annoPubblicazione}}
+        </div><br>
+    <button class="button-87" role="button" (click)="arealibri()">VEDI DI PIÙ</button><br>
+    </div>
+
+<div class="recentidiv">
+    <div *ngFor="let d of dischi">
+    <h4>{{d.titolo}}</h4>
+    Autore: {{d.autore}} <br>
+    Anno Pubblicazione: {{d.annoPubblicazione}}
+    </div><br>
+<button class="button-87" role="button" (click)="areadischi()">VEDI DI PIÙ</button><br> 
+</div>
+<div class="recentidiv">
+    <div *ngFor="let g of giochi">
+    <h4>{{g.titolo}}</h4>
+    Autore: {{g.prezzo}}<br>
+    Anno Pubblicazione: {{g.annoPubblicazione}}
+    </div><br>
+<button class="button-87" role="button" (click)="areagiochi()">VEDI DI PIÙ</button><br> 
+</div>
 </div>
 
-<hr>
-<div><p *ngFor="let d of dischi">
-    Id: {{d.id}} <br>
-    Titolo: {{d.titolo}} <br>
-    Autore : {{d.autore}} <br>
-    Anno Pubblicazione : {{d.annoPubblicazione}}
-</p>
-<button class="button-87" role="button" (click)="areadischi()">DISCHI</button><br> 
-</div>
-<hr>
-<div><p *ngFor="let g of giochi">
-    Id: {{g.id}} <br>
-    Titolo: {{g.titolo}} <br>
-    Autore : {{g.prezzo}}<br>
-    Anno Pubblicazione : {{g.annoPubblicazione}}
-</p>
-<button class="button-87" role="button" (click)="areagiochi()">GIOCHI</button><br> 
-</div>
+</body>
     
 
 
