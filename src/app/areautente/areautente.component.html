@@ -1,5 +1,5 @@
 <!--DATI PERSONALI-->
-<div class="button-86" role="button" *ngIf="isDatiPersonali" class="modal">
+<div class="button-86" role="button" *ngIf="isDatiPersonali">
     <button (click)="toggleVediDati()">CHIUDI</button>
     
     <p>
@@ -34,5 +34,34 @@
         <button class="button-87" role="button" (click)="areadischiu()">DISCHI</button><br> 
         <button class="button-87" role="button" (click)="areagiochiu()">GIOCHI</button><br> 
         <div>
+
+            <div>
+                <p *ngFor="let l of libri">
+                    Id: {{l.id}} <br>
+                    Titolo: {{l.titolo}} <br>
+                    Autore : {{l.autore}}<br>
+                Anno Pubblicazione : {{l.annoPubblicazione}}
+                </p>
+                <button class="button-87" role="button" (click)="arealibriu()">LIBRI</button><br>
+            </div>
+            
+            <hr>
+            <div><p *ngFor="let d of dischi">
+                Id: {{d.id}} <br>
+                Titolo: {{d.titolo}} <br>
+                Autore : {{d.autore}} <br>
+                Anno Pubblicazione : {{d.annoPubblicazione}}
+            </p>
+            <button class="button-87" role="button" (click)="areadischiu()">DISCHI</button><br> 
+            </div>
+            <hr>
+            <div><p *ngFor="let g of giochi">
+                Id: {{g.id}} <br>
+                Titolo: {{g.titolo}} <br>
+                Autore : {{g.prezzo}}<br>
+                Anno Pubblicazione : {{g.annoPubblicazione}}
+            </p>
+            <button class="button-87" role="button" (click)="areagiochiu()">GIOCHI</button><br> 
+            </div>
 
 

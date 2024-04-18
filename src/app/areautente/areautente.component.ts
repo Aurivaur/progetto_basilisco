@@ -1,5 +1,9 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Component, Input } from '@angular/core';
+import { Disco } from 'src/models/Disco';
+import { Gioco } from 'src/models/Gioco';
+import { Libro } from 'src/models/Libro';
+import { LoginStatus } from 'src/models/LoginStatus';
 import { Prodotto } from 'src/models/Prodotto';
 import { Utente } from 'src/models/Utente';
 
@@ -12,6 +16,10 @@ export class AreautenteComponent {
 
   user? : Utente;
   prodotto? : Prodotto[];
+  @Input() libri? : Libro[];
+  @Input() giochi? : Gioco[];
+  @Input() dischi? : Disco[];
+  @Input() token? : LoginStatus;
 
   isDatiPersonali = false;
   isCarrello = false;
@@ -76,8 +84,10 @@ export class AreautenteComponent {
         else{
           let id = token?.split("-")[1] as string;
           this.getUtente(id);
+          this.getRecentiDischi();
+          this.getRecentiGiochi();
+          this.getRecentiLibri();
           //richieste per informazini necessarie - DA FARE
-          //this.getAllProdotti();
           //this.getAllDischi();
           //this.getAllGiochi();
           //this.getAllLibri();
@@ -95,6 +105,65 @@ export class AreautenteComponent {
   toggleVediCarrello(){
     this.isCarrello = !this.isCarrello;
   }
+
+
+  //LISTE
+  getRecentiLibri(){
+    let token = sessionStorage.getItem("token");
+    if(token == null){
+      token = "";
+    }
+    
+    const headers = new HttpHeaders(
+      {
+        'Content-Type' : 'application/json',
+        'token' : token,
+      }
+    )
+
+    this.http.get<Libro[]>("http://localhost:8080/api/areautente/recentilibri", {headers}).subscribe(risposta =>{
+      this.libri = risposta;
+    })
+  }
+
+  getRecentiGiochi(){
+    let token = sessionStorage.getItem("token");
+    if(token == null){
+      token = "";
+    }
+    
+    const headers = new HttpHeaders(
+      {
+        'Content-Type' : 'application/json',
+        'token' : token,
+      }
+    )
+
+    this.http.get<Gioco[]>("http://localhost:8080/api/areautente/recentigiochi", {headers}).subscribe(risposta =>{
+      this.giochi = risposta;
+    })
+  }
+
+  getRecentiDischi(){
+    let token = sessionStorage.getItem("token");
+    if(token == null){
+      token = "";
+    }
+    
+    const headers = new HttpHeaders(
+      {
+        'Content-Type' : 'application/json',
+        'token' : token,
+      }
+    )
+
+    this.http.get<Disco[]>("http://localhost:8080/api/areautente/recentidischi", {headers}).subscribe(risposta =>{
+      this.dischi = risposta;
+    })
+  }
+
+
+
 
   //BOTTONI LISTE
   arealibriu(){

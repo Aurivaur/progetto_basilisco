@@ -11,13 +11,17 @@ export class LibriComponent {
 
 
   @Input() libri? : Libro[];
+  libro? : Libro;
+  selected : number = -1;
 
   constructor(private http : HttpClient)
   {
     this.http = http;
+    this.getAllLibri();
   }
 
-  //SISTEMARE HTTP
+ 
+
   getAllLibri(){
     let token = sessionStorage.getItem("token");
     if(token == null){
@@ -37,6 +41,15 @@ export class LibriComponent {
 
   }
 
+
+   //TOGGLE PER DETTAGLIO
+   dettaglio(id : number){
+    this.selected = id;
+  }
+
+  chiudi() {
+    this.selected = -1;
+  }
   back(){
     
     window.location.href="/home";
