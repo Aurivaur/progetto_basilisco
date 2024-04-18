@@ -15,9 +15,9 @@ import { RegformComponent } from './regform/regform.component';
 import { LibriComponent } from './home/libri/libri.component';
 import { DischiComponent } from './home/dischi/dischi.component';
 import { GiochiComponent } from './home/giochi/giochi.component';
-import { LibriutenteComponent } from './areautenti/libriutente/libriutente.component';
-import { DischiutenteComponent } from './areautenti/dischiutente/dischiutente.component';
-import { GiochiutenteComponent } from './areautenti/giochiutente/giochiutente.component';
+import { DischiutenteComponent } from './areautente/dischiutente/dischiutente.component';
+import { GiochiutenteComponent } from './areautente/giochiutente/giochiutente.component';
+import { LibriutenteComponent } from './areautente/libriutente/libriutente.component';
 
 @NgModule({
   declarations: [
@@ -32,9 +32,10 @@ import { GiochiutenteComponent } from './areautenti/giochiutente/giochiutente.co
     LibriComponent,
     DischiComponent,
     GiochiComponent,
-    LibriutenteComponent,
     DischiutenteComponent,
-    GiochiutenteComponent
+    GiochiutenteComponent,
+    LibriutenteComponent
+    
   ],
   imports: [
     BrowserModule,
