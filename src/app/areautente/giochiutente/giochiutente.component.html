@@ -13,7 +13,7 @@
         <div id="scheda">
             <h2> {{g.titolo}} </h2>
             <h3> Editore: {{g.editore}} </h3>
-            <h3> Eta' consigliata: {{g.minEta}}</h3>
+            <h3> Età consigliata: {{g.minEta}} anni</h3>
             <h3> Prezzo: {{g.prezzo}} € </h3>
             <button *ngIf="!(selected == g.id)" (click)="dettaglio(g.id)">Dettaglio</button>
             <button *ngIf="selected == g.id" (click)="chiudi()">Chiudi</button>

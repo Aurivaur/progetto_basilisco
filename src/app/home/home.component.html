@@ -14,6 +14,8 @@
 </div>
 <div class="recentitotale">
     <div class="recentidiv">
+        <div><h2>I Libri Più Recenti </h2></div>
+        <hr>
         <div *ngFor="let l of libri">
             <h4>{{l.titolo}}</h4>
             Autore: {{l.autore}}<br>
@@ -23,6 +25,8 @@
     </div>
 
 <div class="recentidiv">
+    <div><h2>I Dischi Più Recenti </h2></div>
+    <hr>
     <div *ngFor="let d of dischi">
     <h4>{{d.titolo}}</h4>
     Autore: {{d.autore}} <br>
@@ -31,9 +35,11 @@
 <button class="button-87" role="button" (click)="areadischi()">VEDI DI PIÙ</button><br> 
 </div>
 <div class="recentidiv">
+    <div><h2>I Giochi Più Recenti </h2></div>
+    <hr>
     <div *ngFor="let g of giochi">
     <h4>{{g.titolo}}</h4>
-    Autore: {{g.prezzo}}<br>
+    Editore: {{g.editore}}<br>
     Anno Pubblicazione: {{g.annoPubblicazione}}
     </div><br>
 <button class="button-87" role="button" (click)="areagiochi()">VEDI DI PIÙ</button><br> 
