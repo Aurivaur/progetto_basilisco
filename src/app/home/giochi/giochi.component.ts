@@ -10,10 +10,13 @@ import { Gioco } from 'src/models/Gioco';
 export class GiochiComponent {
 
   @Input() giochi? : Gioco[];
+  selected : number = -1;
+d: any;
 
   constructor(private http : HttpClient)
   {
     this.http = http;
+    this.getAllGiochi();
   }
 
   //SISTEMARE HTTP
@@ -39,6 +42,14 @@ export class GiochiComponent {
   back(){
     
     window.location.href="/home";
+  }
+
+  dettaglio(id : number){
+    this.selected = id;
+  }
+
+  chiudi() {
+    this.selected = -1;
   }
 
 }
