@@ -1,0 +1,27 @@
+img {
+    width: 200px;
+    height: 200px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#element {
+    display: flex;
+}
+
+#cover {
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+#dettaglio {
+    padding-left: 20px;
+}
+#back
+{
+    padding: 20px; 
+    display: flex;
+    justify-content: right;
+}

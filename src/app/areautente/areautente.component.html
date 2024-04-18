@@ -1,6 +1,6 @@
 <!--DATI PERSONALI-->
-<div class="button-86" role="button" *ngIf="isDatiPersonali">
-    <button (click)="toggleVediDati()">CHIUDI</button>
+<div class="modal" role="button" *ngIf="isDatiPersonali">
+    <button (click)="toggleVediDati()">CHIUDI</button><div id="logoDatiP"><img src="assets/images/logoBa.jpg" height="40px" width="40px"/></div>
     
     <p>
        Nome: {{user?.nome}}<br>
@@ -29,39 +29,37 @@
 <h1>E-COMMERCE BASILISKO</h1>
 <div>
     <h1>Benvenuta/o {{user?.nome}}</h1> 
-    <div>
-        <button class="button-87" role="button" (click)="arealibriu()">LIBRI</button><br> 
-        <button class="button-87" role="button" (click)="areadischiu()">DISCHI</button><br> 
-        <button class="button-87" role="button" (click)="areagiochiu()">GIOCHI</button><br> 
-        <div>
-
-            <div>
-                <p *ngFor="let l of libri">
-                    Id: {{l.id}} <br>
-                    Titolo: {{l.titolo}} <br>
-                    Autore : {{l.autore}}<br>
-                Anno Pubblicazione : {{l.annoPubblicazione}}
-                </p>
-                <button class="button-87" role="button" (click)="arealibriu()">LIBRI</button><br>
-            </div>
-            
-            <hr>
-            <div><p *ngFor="let d of dischi">
-                Id: {{d.id}} <br>
-                Titolo: {{d.titolo}} <br>
-                Autore : {{d.autore}} <br>
-                Anno Pubblicazione : {{d.annoPubblicazione}}
-            </p>
-            <button class="button-87" role="button" (click)="areadischiu()">DISCHI</button><br> 
-            </div>
-            <hr>
-            <div><p *ngFor="let g of giochi">
-                Id: {{g.id}} <br>
-                Titolo: {{g.titolo}} <br>
-                Autore : {{g.prezzo}}<br>
-                Anno Pubblicazione : {{g.annoPubblicazione}}
-            </p>
-            <button class="button-87" role="button" (click)="areagiochiu()">GIOCHI</button><br> 
-            </div>
+    <div class="bottoniiniziali">
+        <div><button id="libri" role="button" (click)="arealibriu()">LIBRI</button> </div>
+        <div><button id="dischi" role="button" (click)="areadischiu()">DISCHI</button></div>
+        <div><button id="giochi" role="button" (click)="areagiochiu()">GIOCHI</button></div>
+        </div>
+        <div class="recentitotale">
+        <div class="recentidiv">
+            <div *ngFor="let l of libri">
+                <h4>{{l.titolo}}</h4>
+                Autore: {{l.autore}}<br>
+                Anno Pubblicazione: {{l.annoPubblicazione}}
+            </div><br>
+        <button class="button-87" role="button" (click)="arealibriu()">VEDI DI PIÙ</button><br>
+        </div>
+        
+        <div class="recentidiv">
+            <div *ngFor="let d of dischi">
+            <h4>{{d.titolo}} </h4>
+            Autore: {{d.autore}} <br>
+            Anno Pubblicazione: {{d.annoPubblicazione}}
+            </div><br>
+        <button class="button-87" role="button" (click)="areadischiu()">VEDI DI PIÙ</button><br> 
+        </div>
+        <div class="recentidiv">
+            <div *ngFor="let g of giochi">
+            <h4>{{g.titolo}}</h4> 
+            Autore: {{g.prezzo}}<br>
+            Anno Pubblicazione: {{g.annoPubblicazione}}
+            </div><br>
+        <button class="button-87" role="button" (click)="areagiochiu()">VEDI DI PIÙ</button><br> 
+        </div>
+        </div>
 
 

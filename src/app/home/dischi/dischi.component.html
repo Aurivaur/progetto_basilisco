@@ -2,7 +2,7 @@
     <h1>Collezione Dischi</h1>
     <br>
 </div>
-<div>
+<div id="back">
     <div *ngFor="let d of dischi" id="element">
         <div id="cover">
             <img src="../../../assets/images/dischi/id{{d.id}}.jpg" alt="">
@@ -12,8 +12,8 @@
             <h3> Autore: {{d.autore}} </h3>
             <h3> Genere: {{d.genere}} </h3>
             <h3> Prezzo: {{d.prezzo}} € </h3>
-            <button *ngIf="!(selected == d.id)" (click)="dettaglio(d.id)">dettaglio</button>
-            <button *ngIf="selected == d.id" (click)="chiudi()">chiudi</button>
+            <button *ngIf="!(selected == d.id)" (click)="dettaglio(d.id)">Dettaglio</button>
+            <button *ngIf="selected == d.id" (click)="chiudi()">Chiudi</button>
         </div>
         <div id="dettaglio">
             <h2 *ngIf="selected == d.id"> Dettaglio: </h2>
