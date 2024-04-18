@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class LibriutenteComponent {
 
-
   back(){
     
     window.location.href="/areautente";
   }
 }
+

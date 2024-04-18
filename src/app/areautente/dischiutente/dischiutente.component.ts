@@ -6,10 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./dischiutente.component.css']
 })
 export class DischiutenteComponent {
-
-
+  
+  
   back(){
     
     window.location.href="/areautente";
   }
+
 }
