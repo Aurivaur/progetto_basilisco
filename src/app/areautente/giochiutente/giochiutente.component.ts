@@ -11,10 +11,12 @@ export class GiochiutenteComponent {
 
 
   @Input() giochi? : Gioco[];
-
+  gioco? : Gioco;
+  selected : number = -1;
   constructor(private http : HttpClient)
   {
     this.http = http;
+    this.getAllGiochi();
   }
 
   //SISTEMARE HTTP
@@ -39,6 +41,13 @@ export class GiochiutenteComponent {
 
 
   //REINDIRIZZAMENTO
+  dettaglio(id : number){
+    this.selected = id;
+  }
+
+  chiudi() {
+    this.selected = -1;
+  }
   back(){
     
     window.location.href="/areautente";

@@ -1,1 +1,29 @@
-<div><button class="button-87" role="button" (click)="back()">TORNA ALL'AREA UTENTE</button><br></div>
+<div>
+    <h1>Collezione Giochi</h1>
+    <br>
+</div>
+<div>
+    <div *ngFor="let g of giochi" id="element">
+        <div id="cover">
+            <img src="../../../assets/images/giochi/id{{g.id}}.jpg" alt="">
+        </div>
+        <div id="scheda">
+            <h2> {{g.titolo}} </h2>
+            <h3> Editore: {{g.editore}} </h3>
+            <h3> Eta' consigliata: {{g.minEta}}</h3>
+            <h3> Prezzo: {{g.prezzo}} € </h3>
+            <button *ngIf="!(selected == g.id)" (click)="dettaglio(g.id)">dettaglio</button>
+            <button *ngIf="selected == g.id" (click)="chiudi()">chiudi</button>
+        </div>
+        <div id="dettaglio">
+            <h2 *ngIf="selected == g.id"> Dettaglio: </h2>
+            <h3 *ngIf="selected == g.id"> Anno: {{g.annoPubblicazione}} </h3>
+            <h3 *ngIf="selected == g.id"> Da {{g.minGiocatori}} a {{g.maxGiocatori}} giocatori </h3>
+            <h3 *ngIf="selected == g.id"> Descrizione: {{g.descrizione}} </h3>
+            
+        </div>
+    </div>
+</div>
+<div>
+    <button class="button-87" role="button" (click)="back()">HOME</button><br>
+</div>
