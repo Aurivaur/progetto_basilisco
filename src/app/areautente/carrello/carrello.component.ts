@@ -16,10 +16,13 @@ export class CarrelloComponent {
 
   //carrello! : Prodotto[];
 
+  totale : number = 0;
+
 
   constructor(private http : HttpClient){
     this.http = http;
     this.getCarrello();
+    this.ngOnInit();
   }
 
   getCarrello(){
@@ -40,7 +43,8 @@ export class CarrelloComponent {
       console.log(this.carrello);
       //this.listacarrello = Array.from(this.carrello.keys());
     })
-
+    this.calcoloTotale();
+    
   }
 
   elimina(id : number) {
@@ -70,11 +74,7 @@ export class CarrelloComponent {
   }
 
 
-  acquista() {
-    alert("Grazie per l'acquisto!");
-    this.svuota();
-    window.location.href="/areautente";
-  }
+  
 
   svuota() {
     let token = sessionStorage.getItem("token");
@@ -92,9 +92,40 @@ export class CarrelloComponent {
     //const params = new HttpParams().set('idProdotto', id);
 
     this.http.get<boolean>("http://localhost:8080/api/areautente/carrello/svuota", {headers}).subscribe(risposta =>{
-      //this.carrello = [];
-      console.log(risposta);
+
+      if(risposta){
+        this.getCarrello();
+      }
     })
   }
 
+  ngOnInit(): void {
+    this.calcoloTotale();
+  }
+
+  calcoloTotale() {
+    this.totale = 0;
+    this.carrello?.forEach((p) => {
+      this.totale! += p.prezzo;
+    });
+  }
+
+
+
+
+  acquista() {
+
+    this.svuota();
+    
+    alert("Grazie per l'acquisto!");
+    
+    
+    window.location.href="/areautente";
+  }
+
+
+  back(){
+    
+    window.location.href="/areautente";
+  }
 }

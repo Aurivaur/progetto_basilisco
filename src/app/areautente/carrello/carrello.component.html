@@ -4,16 +4,23 @@
 <div>
     <h1>Carrello</h1>
 </div>
+<div id="back">
+    <button class="bottoni-carrello" role="button" (click)="back()">HOME</button><br>
+</div>
 <div>
     <h2>Resoconto: </h2>
     <div>
         <ul>
             <li *ngFor="let p of carrello">
-                <p>{{p.titolo}} : {{p.prezzo}} $</p>
+                <p>{{p.titolo}} - {{p.prezzo}} €</p>
                 <button (click)="elimina(p.id)">X</button>
             </li>
         </ul>
+        <button class="svuota" (click)="svuota()">Svuota carrello</button>
+        <p>Total price: {{ totale }}</p>
+        
     </div>
+
     <h2>Totale: </h2>
     <form action="">
         <label for="indirizzofatturazione">Inserisci indirizzo fatturazione: </label>
@@ -22,10 +29,10 @@
         <label for="indirizzospedizione">Inserisci indirizzo spedizione: </label>
         <input type="text" name="indirizzospedizione">
         <br>
-        <label for="indirizzofatturazione">Inserisci indirizzo fatturazione: </label>
-        <input type="text" name="indirizzofatturazione">
+        <label for="metododipagamento">Inserisci indirizzo fatturazione: </label>
+        <input type="text" name="metododipagamento">
         <br>
     </form>
-    <button (click)="acquista()">Acquista</button>
+    <div><button class="acquista" (click)="acquista()">Acquista</button></div>
 </div>
 

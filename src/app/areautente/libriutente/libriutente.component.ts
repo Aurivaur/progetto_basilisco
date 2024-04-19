@@ -90,6 +90,7 @@ export class LibriutenteComponent {
     
     window.location.href="/areautente";
   }
+  
   carrello() {
     window.location.href="/carrello";
   }
