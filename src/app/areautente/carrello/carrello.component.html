@@ -12,12 +12,12 @@
     <div>
         <ul>
             <li *ngFor="let p of carrello">
-                <p>{{p.titolo}} - {{p.prezzo}} €</p>
-                <button (click)="elimina(p.id)">X</button>
+                    <h4>{{p.titolo}} - {{p.prezzo}} €  <button (click)="elimina(p.id)"> X </button></h4>
+                    
             </li>
         </ul>
         <button class="svuota" (click)="svuota()">Svuota carrello</button>
-        <p>Total price: {{ totale }}</p>
+        <p>Prezzo totale: {{ totale }} €</p>
         
     </div>
 

@@ -22,7 +22,7 @@ export class CarrelloComponent {
   constructor(private http : HttpClient){
     this.http = http;
     this.getCarrello();
-    this.ngOnInit();
+    this.calcoloTotale();
   }
 
   getCarrello(){
@@ -41,9 +41,8 @@ export class CarrelloComponent {
     this.http.get<Prodotto[]>("http://localhost:8080/api/areautente/carrello/all", {headers}).subscribe(risposta =>{
       this.carrello = risposta;
       console.log(this.carrello);
-      //this.listacarrello = Array.from(this.carrello.keys());
+      this.calcoloTotale();
     })
-    this.calcoloTotale();
     
   }
 
@@ -69,8 +68,9 @@ export class CarrelloComponent {
         if(pos! > -1){
           this.carrello?.splice(pos!, 1);
         }
-      }
+      }this.calcoloTotale();
     })
+    
   }
 
 
