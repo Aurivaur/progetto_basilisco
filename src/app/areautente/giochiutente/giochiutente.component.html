@@ -2,6 +2,7 @@
     <h1>Collezione Giochi</h1>
     <br>
 </div>
+<div><button class="button-86" role="button" (click)="carrello()">CARRELLO</button></div>
 <div id="back">
     <button class="button-87" role="button" (click)="back()">HOME</button><br>
 </div >
@@ -17,6 +18,7 @@
             <h3> Prezzo: {{g.prezzo}} € </h3>
             <button *ngIf="!(selected == g.id)" (click)="dettaglio(g.id)">Dettaglio</button>
             <button *ngIf="selected == g.id" (click)="chiudi()">Chiudi</button>
+            <button (click)="aggiungiAlCarrello(g.id)">Aggiungi al Carrello</button>
         </div>
         <div id="dettaglio">
             <h2 *ngIf="selected == g.id"> Dettaglio: </h2>
