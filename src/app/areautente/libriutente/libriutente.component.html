@@ -17,7 +17,7 @@
             <h3> Prezzo: {{d.prezzo}} € </h3>
             <button *ngIf="!(selected == d.id)" (click)="dettaglio(d.id)">Dettaglio</button>
             <button *ngIf="selected == d.id" (click)="chiudi()">Chiudi</button>
-           <!--<button (click)="aggiungiAlCarrello()">Aggiungi al Carrello</button>-->
+            <button (click)="aggiungiLibro(d.id)">Aggiungi al Carrello</button>
         </div>
         <div id="dettaglio">
             <h2 *ngIf="selected == d.id"> Dettaglio: </h2>

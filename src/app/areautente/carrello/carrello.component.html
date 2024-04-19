@@ -1,11 +1,18 @@
 <!--Riceve i dati  MA non li mostra-->
-<!--<app-libriutente (carrello)="aggiungiAlCarrello($event)"></app-libriutente>-->
+<app-libriutente (carrello)="aggiungiAlCarrello($event)"></app-libriutente>
 
 <div>
     <h1>Carrello</h1>
 </div>
 <div>
     <h2>Resoconto: </h2>
+    <div>
+        <ul>
+            <li *ngFor="let p of carrello">
+                <p>{{p.titolo}} : {{p.prezzo}} $</p>
+            </li>
+        </ul>
+    </div>
     <h2>Totale: </h2>
     <form action="">
         <label for="indirizzofatturazione">Inserisci indirizzo fatturazione: </label>
@@ -18,5 +25,5 @@
         <input type="text" name="indirizzofatturazione">
         <br>
     </form>
-    <button>Acquista</button>
+    <button (click)="acquista()">Acquista</button>
 </div>

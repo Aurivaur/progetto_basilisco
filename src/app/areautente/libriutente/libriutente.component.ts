@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Libro } from 'src/models/Libro';
 import { Prodotto } from 'src/models/Prodotto';
@@ -21,6 +21,33 @@ export class LibriutenteComponent {
   {
     this.http = http;
     this.getAllLibri();
+  }
+
+  /*aggiungiCarrello(id : number) {
+    this.carrello.next(getLibroById(id));
+  }*/
+
+  aggiungiLibro(id : number){
+    let token = sessionStorage.getItem("token");
+    //Evitiamo di passare il token all'header con un null
+    if(token == null){
+      token = "";
+    }
+    const headers = new HttpHeaders(
+      {
+        'Content-Type' : 'application/json',
+        'token' : token
+      }
+    )
+    const params = new HttpParams().set('idLibro', id);
+
+    this.http.get("http://localhost:8080/api/areautente/carrello/insertlibro", {headers, params},).subscribe(risposta =>{
+      console.log(risposta);
+      this.libro = risposta as Libro;
+    })
+
+    this.carrello.next(this.libro!);
+
   }
 
 
