@@ -12,7 +12,7 @@ export class CarrelloComponent {
   //avrò una lista di prodotti che aggiungo da vari componenti
   @Input() carrello? : Map<Prodotto, number>;
 
-  listacarrello! : Prodotto[];
+  listacarrello = this.carrello?.keys();
 
   //carrello! : Prodotto[];
 
@@ -35,7 +35,7 @@ export class CarrelloComponent {
       }
     )
 
-    this.http.post<Map<Prodotto,number>>("http://localhost:8080/api/areautente/carrello/all", {headers}).subscribe(risposta =>{
+    this.http.get<Map<Prodotto,number>>("http://localhost:8080/api/areautente/carrello/all", {headers}).subscribe(risposta =>{
       this.carrello = risposta;
     })
 

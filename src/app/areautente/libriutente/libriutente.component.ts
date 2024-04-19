@@ -29,19 +29,22 @@ export class LibriutenteComponent {
   aggiungiAlCarrello(id : number){
     let token = sessionStorage.getItem("token");
     //Evitiamo di passare il token all'header con un null
+    console.log("A", token);
     if(token == null){
+      console.log("B");
       token = "";
     }
+    console.log("C");
     const headers = new HttpHeaders(
       {
         'Content-Type' : 'application/json',
         'token' : token
       }
     )
-    const params = new HttpParams().set('idLibro', id);
-    params.set('quantita', 1);
+    console.log("D", headers);
+    const params = new HttpParams().set('idLibro', id).set('quantita', 1);
 
-    this.http.post("http://localhost:8080/api/areautente/carrello/insertlibro", {headers, params},).subscribe(risposta =>{
+    this.http.get("http://localhost:8080/api/areautente/carrello/insertlibro", {headers, params}).subscribe(risposta =>{
       console.log(risposta);
       this.libro = risposta as Libro;
     })
