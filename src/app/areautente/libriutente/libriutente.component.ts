@@ -15,7 +15,6 @@ export class LibriutenteComponent {
   libro? : Libro;
   selected : number = -1;
   
-  @Output() carrello = new EventEmitter<Prodotto>();
 
   constructor(private http : HttpClient)
   {
@@ -27,7 +26,7 @@ export class LibriutenteComponent {
     this.carrello.next(getLibroById(id));
   }*/
 
-  aggiungiLibro(id : number){
+  aggiungiAlCarrello(id : number){
     let token = sessionStorage.getItem("token");
     //Evitiamo di passare il token all'header con un null
     if(token == null){
@@ -40,13 +39,12 @@ export class LibriutenteComponent {
       }
     )
     const params = new HttpParams().set('idLibro', id);
+    params.set('quantita', 1);
 
-    this.http.get("http://localhost:8080/api/areautente/carrello/insertlibro", {headers, params},).subscribe(risposta =>{
+    this.http.post("http://localhost:8080/api/areautente/carrello/insertlibro", {headers, params},).subscribe(risposta =>{
       console.log(risposta);
       this.libro = risposta as Libro;
     })
-
-    this.carrello.next(this.libro!);
 
   }
 

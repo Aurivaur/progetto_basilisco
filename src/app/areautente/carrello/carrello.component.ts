@@ -10,22 +10,39 @@ import { Prodotto } from 'src/models/Prodotto';
 export class CarrelloComponent {
 
   //avrò una lista di prodotti che aggiungo da vari componenti
-  //@Input() carrello? : Prodotto[];
+  @Input() carrello? : Map<Prodotto, number>;
 
-  carrello! : Prodotto[];
+  listacarrello! : Prodotto[];
+
+  //carrello! : Prodotto[];
 
 
   constructor(private http : HttpClient){
     this.http = http;
+    this.getCarrello();
   }
 
-  aggiungiAlCarrello(prodotto: Prodotto)
-  {
-    this.carrello.push(prodotto);
+  getCarrello(){
+    let token = sessionStorage.getItem("token");
+    if(token == null){
+      token = "";
+    }
+    
+    const headers = new HttpHeaders(
+      {
+        'Content-Type' : 'application/json',
+        'token' : token,
+      }
+    )
+
+    this.http.post<Map<Prodotto,number>>("http://localhost:8080/api/areautente/carrello/all", {headers}).subscribe(risposta =>{
+      this.carrello = risposta;
+    })
+
   }
+
 
   acquista() {
-    this.carrello = [];
     alert("Grazie per l'acquisto!");
     window.location.href="/areautente";
   }

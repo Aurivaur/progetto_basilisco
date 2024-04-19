@@ -1,6 +1,6 @@
 <!--Riceve i dati  MA non li mostra-->
-<app-libriutente (carrello)="aggiungiAlCarrello($event)"></app-libriutente>
 
+<!--<app-carrello [carrello]="listacarrello"></app-carrello>-->
 <div>
     <h1>Carrello</h1>
 </div>
@@ -8,7 +8,7 @@
     <h2>Resoconto: </h2>
     <div>
         <ul>
-            <li *ngFor="let p of carrello">
+            <li *ngFor="let p of carrello?.keys()">
                 <p>{{p.titolo}} : {{p.prezzo}} $</p>
             </li>
         </ul>
@@ -27,3 +27,4 @@
     </form>
     <button (click)="acquista()">Acquista</button>
 </div>
+
