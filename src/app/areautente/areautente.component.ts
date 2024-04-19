@@ -180,7 +180,7 @@ export class AreautenteComponent {
   }
 
   //CHECKOUT
-  checkout() {
+  carrello() {
     window.location.href="/carrello";
   }
 

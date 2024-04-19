@@ -83,7 +83,7 @@ h1{
   position: absolute;
   top: 10px;
   bottom: 50px;
-  left: 360px
+  left: 450px
 
 }
 
@@ -97,6 +97,7 @@ h1{
   padding: 15px;
   border: 2px solid black;
   z-index: 9999;
+  box-shadow: 10px 10px 10px rgb(2, 117, 64);
 }  
 #logoDatiP
 {
@@ -117,6 +118,7 @@ background-repeat: no-repeat;
 background-position: center center;
 font-size: 100px;
 color: rgb(0, 133, 55);
+box-shadow: 10px 10px 10px rgb(2, 117, 64);
 }
 #giochi{
 width: 500px;
@@ -127,6 +129,7 @@ background-repeat: no-repeat;
 background-position: center center;
 font-size: 100px;
 color: rgb(0, 133, 55);
+box-shadow: 10px 10px 10px rgb(2, 117, 64);
 }
 #dischi{
 width: 500px;
@@ -137,6 +140,7 @@ background-repeat: no-repeat;
 background-position: center center;
 font-size: 100px;
 color: rgb(0, 133, 55);
+box-shadow: 10px 10px 10px rgb(2, 117, 64);
 }
 
 .bottoniiniziali{

@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Libro } from 'src/models/Libro';
+import { Prodotto } from 'src/models/Prodotto';
 
 @Component({
   selector: 'app-libriutente',
@@ -13,6 +14,8 @@ export class LibriutenteComponent {
   @Input() libri? : Libro[];
   libro? : Libro;
   selected : number = -1;
+  
+  @Output() carrello = new EventEmitter<Prodotto>();
 
   constructor(private http : HttpClient)
   {
@@ -39,6 +42,10 @@ export class LibriutenteComponent {
     })
 
   }
+
+  
+
+  
 
 
 

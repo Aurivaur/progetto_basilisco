@@ -83,7 +83,7 @@ h1{
   position: absolute;
   top: 45px;
   bottom: 100px;
-  left: 350px
+  left: 450px;
 
 }
 
@@ -96,6 +96,7 @@ h1{
   background-position: center center;
   font-size: 100px;
   color: rgb(0, 133, 55);
+  box-shadow: 10px 10px 10px rgb(2, 117, 64);
 }
 #giochi{
   width: 500px;
@@ -106,6 +107,7 @@ h1{
   background-position: center center;
   font-size: 100px;
   color: rgb(0, 133, 55);
+  box-shadow: 10px 10px 10px rgb(2, 117, 64);
 }
 #dischi{
   width: 500px;
@@ -116,6 +118,7 @@ h1{
   background-position: center center;
   font-size: 100px;
   color: rgb(0, 133, 55);
+  box-shadow: 10px 10px 10px rgb(2, 117, 64);
 }
 
 .bottoniiniziali{

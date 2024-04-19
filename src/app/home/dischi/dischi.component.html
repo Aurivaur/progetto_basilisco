@@ -3,6 +3,9 @@
     <br>
 </div>
 <div id="back">
+    <button class="button-87" role="button" (click)="back()">HOME</button><br>
+</div>
+<div>
     <div *ngFor="let d of dischi" id="element">
         <div id="cover">
             <img src="../../../assets/images/dischi/id{{d.id}}.jpg" alt="">
@@ -22,6 +25,4 @@
         </div>
     </div>
 </div>
-<div>
-    <button class="button-87" role="button" (click)="back()">HOME</button><br>
-</div>
+
