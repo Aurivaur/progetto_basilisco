@@ -8,8 +8,9 @@
     <h2>Resoconto: </h2>
     <div>
         <ul>
-            <li *ngFor="let p of listacarrello">
+            <li *ngFor="let p of carrello">
                 <p>{{p.titolo}} : {{p.prezzo}} $</p>
+                <button (click)="elimina(p.id)">X</button>
             </li>
         </ul>
     </div>
