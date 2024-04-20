@@ -1,3 +1,6 @@
 body{
-    background-color: aquamarine;
+    /*background: #238C79;*/
+    /*background: linear-gradient(#238C79, #53ac9b);*/
+    background-image: linear-gradient(0deg, #238C79 0%, #2AF598 100%);  
+    font-family: monospace;
 }

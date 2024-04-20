@@ -17,33 +17,36 @@
     <div class="recentidiv">
         <div><h2>I Libri Più Recenti </h2></div>
         <hr>
-        <div *ngFor="let l of libri">
+        <div *ngFor="let l of libri" class="recente-div">
+            <img src="../../../assets/images/Libri/id{{l.id}}.jpg" alt="" class="icon">
             <h4>{{l.titolo}}</h4>
-            Autore: {{l.autore}}<br>
-            Anno Pubblicazione: {{l.annoPubblicazione}}
+            {{l.autore}}<br>
+            {{l.annoPubblicazione}}<br>
         </div><br>
-    <button class="button-87" role="button" (click)="arealibri()">VEDI DI PIÙ</button><br>
+    <button class="btn5" role="button" (click)="arealibri()">VEDI DI PIÙ</button><br>
     </div>
 
 <div class="recentidiv">
     <div><h2>I Dischi Più Recenti </h2></div>
     <hr>
-    <div *ngFor="let d of dischi">
+    <div *ngFor="let d of dischi" class="recente-div">
+    <img src="../../../assets/images/dischi/id{{d.id}}.jpg" alt="" class="icon">
     <h4>{{d.titolo}}</h4>
-    Autore: {{d.autore}} <br>
-    Anno Pubblicazione: {{d.annoPubblicazione}}
+    {{d.autore}} <br>
+    {{d.annoPubblicazione}}<br>
     </div><br>
-<button class="button-87" role="button" (click)="areadischi()">VEDI DI PIÙ</button><br> 
+<button class="btn5" role="button" (click)="areadischi()">VEDI DI PIÙ</button><br> 
 </div>
 <div class="recentidiv">
     <div><h2>I Giochi Più Recenti </h2></div>
     <hr>
-    <div *ngFor="let g of giochi">
-    <h4>{{g.titolo}}</h4>
-    Editore: {{g.editore}}<br>
-    Anno Pubblicazione: {{g.annoPubblicazione}}
+    <div *ngFor="let g of giochi" class="recente-div">
+        <img src="../../../assets/images/giochi/id{{g.id}}.jpg" alt="" class="icon">
+        <h4>{{g.titolo}}</h4>
+        {{g.editore}}<br>
+        {{g.annoPubblicazione}}<br>
     </div><br>
-<button class="button-87" role="button" (click)="areagiochi()">VEDI DI PIÙ</button><br> 
+<button class="btn5" role="button" (click)="areagiochi()">VEDI DI PIÙ</button><br> 
 </div>
 </div>
 

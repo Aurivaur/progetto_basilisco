@@ -139,3 +139,55 @@ h1{
 body{
   /*background-color: rgb(148, 252, 148);*/
 }
+
+.icon{
+  width: 100px;
+  height: 100px;
+}
+
+.recente-div {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.recente-div h4 {
+  color: white;
+}
+
+.recente-div img {
+  box-shadow: 10px 10px 20px rgb(31, 31, 31);
+}
+
+h2 {
+  color: white;
+  text-shadow: black;
+  text-decoration:solid;
+}
+
+.btn5{
+  display:inline-block;
+  padding:0.7em 1.4em;
+  margin:0 0.3em 0.3em 0;
+  border:none;
+  border-radius:0.5em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'arial';
+  text-transform:uppercase;
+  font-weight:400;
+  color:#FFFFFF;
+  background-color:#e66a17;
+  box-shadow:inset 0 -0.6em 0 -0.3em rgba(0,0,0,0.20);
+  text-align:center;
+  position:relative;
+  cursor:pointer;
+}
+.btn5:hover{
+  background:#ff812c;
+}
+.btn5:active{
+  background:#e66a17;
+  top:0.15em;
+  color:#D9D9D9;
+  box-shadow:none;
+}
