@@ -44,6 +44,8 @@ export class GiochiutenteComponent {
       this.gioco = risposta as Gioco;
     })
 
+    alert("Gioco aggiunto al carrello");
+
   }
 
 

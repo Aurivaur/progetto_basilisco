@@ -90,14 +90,17 @@ h1{
 /*DATI PERSONALI*/
 .modal{
   position: fixed;
+  padding: 20px;
+  font-size: 20px;
   top: 30%;
   left: 50%;
   transform: translate(-50%, 50%);
-  background-color: rgb(70, 189, 153);
+  background-color: #2af59a;
   padding: 15px;
   border: 2px solid black;
   z-index: 9999;
-  box-shadow: 10px 10px 10px rgb(2, 117, 64);
+  box-shadow: 10px 10px 20px black;
+  border-radius: 10%;
 }  
 #logoDatiP
 {

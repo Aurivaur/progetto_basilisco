@@ -49,6 +49,8 @@ export class LibriutenteComponent {
       this.libro = risposta as Libro;
     })
 
+    alert("Libro aggiunto al carrello");
+
   }
 
 

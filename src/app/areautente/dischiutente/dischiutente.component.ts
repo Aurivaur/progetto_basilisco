@@ -44,6 +44,8 @@ export class DischiutenteComponent {
       this.disco = risposta as Disco;
     })
 
+    alert("Disco aggiunto al carrello");
+
   }
 
   getAllDischi(){
