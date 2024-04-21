@@ -31,7 +31,7 @@
         <label for="numeropagine">Numero Pagine: </label>
         <input type="number" name="numeropagine" formControlName="numeropagine">
         <br>
-        <input type="submit" value="SUBMIT: Modifica Libro">
+        <input class="submit" type="submit" value="Conferma">
     </form>
 </div>
 
@@ -57,7 +57,7 @@
         <label for="numeropagine">Numero Pagine: </label>
         <input type="number" name="numeropagine" formControlName="numeropagine"><br>
 
-        <input type="submit" value="SUBMIT: Inserisci nuovo libro">
+        <input class="submit" type="submit" value="Conferma">
     </form>
 </div>
 <button (click)="toggleInsertLibri()" *ngIf="!isInserisciLibro">Inserisci un libro</button>
@@ -131,7 +131,7 @@
         <input type="number" name="maxGiocatori" formControlName="maxgiocatori"><br>
         <label for="durata">Durata: </label>
         <input type="number" name="durata" formControlName="durata"><br>
-        <input type="submit" value="SUBMIT: Modifica Disco">
+        <input class="submit" type="submit" value="Conferma">
     </form>
 </div>
 
@@ -159,7 +159,7 @@
         <label for="durata">Durata: </label>
         <input type="number" name="durata" formControlName="durata"><br>
 
-        <input type="submit" value="SUBMIT: Inserisci nuovo gioco">
+        <input class="submit" type="submit" value="Conferma">
     </form>
 </div>
 <button (click)="toggleInsertGiochi()" *ngIf="!isInserisciGioco">Inserisci un gioco</button>
@@ -236,7 +236,7 @@
         <label for="durata">Durata: </label>
         <input type="number" name="durata" formControlName="durata">
         <br>
-        <input type="submit" value="SUBMIT: Modifica Disco">
+        <input class="submit" type="submit" value="Conferma">
     </form>
 </div>
 
@@ -262,7 +262,7 @@
         <label for="durata">Durata: </label>
         <input type="number" name="durata" formControlName="durata"><br>
 
-        <input type="submit" value="SUBMIT: Inserisci nuovo disco">
+        <input class="submit" type="submit" value="Conferma">
     </form>
 </div>
 <button (click)="toggleInsertDischi()" *ngIf="!isInserisciDisco">Inserisci un disco</button>
