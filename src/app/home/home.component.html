@@ -9,13 +9,13 @@
 <h1>E-COMMERCE BASILISKO</h1>
 <br>
 <div class="bottoniiniziali">
-<div><button id="libri" role="button" (click)="arealibri()">LIBRI</button> </div>
-<div><button id="dischi" role="button" (click)="areadischi()">DISCHI</button></div>
-<div><button id="giochi" role="button" (click)="areagiochi()">GIOCHI</button></div>
+    <button id="libri" role="button" (click)="arealibri()" ></button>
+    <button id="dischi" role="button" (click)="areadischi()"></button>
+    <button id="giochi" role="button" (click)="areagiochi()"></button>
 </div>
 <div class="recentitotale">
     <div class="recentidiv">
-        <div><h2>I Libri Più Recenti </h2></div>
+        <div><h2>Novità Libri </h2></div>
         <hr>
         <div *ngFor="let l of libri" class="recente-div">
             <img src="../../../assets/images/Libri/id{{l.id}}.jpg" alt="" class="icon">
@@ -27,7 +27,7 @@
     </div>
 
 <div class="recentidiv">
-    <div><h2>I Dischi Più Recenti </h2></div>
+    <div><h2>Novità Dischi </h2></div>
     <hr>
     <div *ngFor="let d of dischi" class="recente-div">
     <img src="../../../assets/images/dischi/id{{d.id}}.jpg" alt="" class="icon">
@@ -38,7 +38,7 @@
 <button class="btn5" role="button" (click)="areadischi()">VEDI DI PIÙ</button><br> 
 </div>
 <div class="recentidiv">
-    <div><h2>I Giochi Più Recenti </h2></div>
+    <div><h2>Novità Giochi</h2></div>
     <hr>
     <div *ngFor="let g of giochi" class="recente-div">
         <img src="../../../assets/images/giochi/id{{g.id}}.jpg" alt="" class="icon">

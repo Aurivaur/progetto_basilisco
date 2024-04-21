@@ -5,7 +5,7 @@
     <br>
 </div>
 <div id="back">
-    <button class="btn4" role="button" (click)="back()">HOME</button><br>
+    <button class="btn41" role="button" (click)="back()">HOME</button><br>
 </div>
 <div>
     <div *ngFor="let d of libri" id="element">
@@ -20,7 +20,7 @@
             <button *ngIf="!(selected == d.id)" (click)="dettaglio(d.id)" class="btn5">Dettaglio</button>
             <button *ngIf="selected == d.id" (click)="chiudi()" class="btn5">Chiudi</button>
         </div>
-        <div id="dettaglio">
+        <div id="dettaglio" *ngIf="selected == d.id">
             <h2 *ngIf="selected == d.id"> Dettaglio: </h2>
             <h3 *ngIf="selected == d.id"> Anno: {{d.annoPubblicazione}} </h3>
             <h3 *ngIf="selected == d.id"> Editore: {{d.editore}} </h3>
