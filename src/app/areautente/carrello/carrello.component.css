@@ -64,3 +64,16 @@ box-shadow:none;
     font-size: 20px;
     text-align: center;
 }
+
+.module {
+    margin-left: 20px;
+    height: 25px;
+    width: 300px;
+    background-color: #106b428c;
+  }
+
+  .module::placeholder {
+    color: white;
+    text-align: center;
+    font-style: italic;
+  }

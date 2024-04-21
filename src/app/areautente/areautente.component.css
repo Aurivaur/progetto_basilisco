@@ -78,25 +78,28 @@ h1{
     transform: translate(0, 5%);
   }
 
-  #logo
-{
-  position: absolute;
-  top: 10px;
-  bottom: 50px;
-  left: 450px
+  #logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+  }
 
-}
+  #logo img {
+    margin-right: 20px;
+    width: 150px;
+    height: 150px;
+  }
 
 /*DATI PERSONALI*/
 .modal{
   position: fixed;
   padding: 60px;
   font-size: 20px;
-  top: 30%;
-  left: 50%;
+  top: 20%;
+  left: 40%;
   transform: translate(-50%, 50%);
   background-color: #2af59a;
-  padding: 15px;
   border: 2px solid black;
   z-index: 9999;
   box-shadow: 10px 10px 20px black;
@@ -104,50 +107,57 @@ h1{
 }  
 #logoDatiP
 {
-  position: absolute;
-  top: 10px;
-  bottom: 50px;
-  left: 160px
-
+  width: 20px;
 }
 
 
 #libri{
-width: 500px;
-height: 300px;
-background-color: #FF0000;
-background-image: image-set('assets/images/libri.jpg');
-background-repeat: no-repeat;
-background-position: center center;
-font-size: 100px;
-color: rgb(0, 133, 55);
-box-shadow: 10px 10px 10px rgb(2, 117, 64);
+  width: 400px;
+  height: 300px;
+  background-color: #ff7300;
+  background-image: image-set('assets/images/libri.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-size: 100;
+  color: rgb(0, 133, 55);
+  box-shadow: 10px 10px 10px rgb(2, 117, 64);
+  /*margin-right: 30px;*/
+
 }
 #giochi{
-width: 500px;
-height: 300px;
-background-color: #FF0000;
-background-image: image-set('assets/images/giochi.jpg');
-background-repeat: no-repeat;
-background-position: center center;
-font-size: 100px;
-color: rgb(0, 133, 55);
-box-shadow: 10px 10px 10px rgb(2, 117, 64);
+  width: 400px;
+  height: 300px;
+  background-color: #ff7300;
+  background-image: image-set('assets/images/giochi.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-size: 100px;
+  color: rgb(0, 133, 55);
+  box-shadow: 10px 10px 10px rgb(2, 117, 64);
 }
 #dischi{
-width: 500px;
-height: 300px;
-background-color: #FF0000;
-background-image: image-set('assets/images/vinili.jpg');
-background-repeat: no-repeat;
-background-position: center center;
-font-size: 100px;
-color: rgb(0, 133, 55);
-box-shadow: 10px 10px 10px rgb(2, 117, 64);
+  width: 400px;
+  height: 300px;
+  background-color: #ff7300;
+  background-image: image-set('assets/images/vinili.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-size: 100px;
+  color: rgb(0, 133, 55);
+  box-shadow: 10px 10px 20px rgb(2, 117, 64);
+  /*margin-right: 30px;*/
+}
+
+#libri:hover, #dischi:hover, #giochi:hover {
+  width: 520px;
+  height: 320px;
 }
 
 .bottoniiniziali{
-display: flex;
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  justify-content: space-evenly;
 }
 
 .recentitotale{
@@ -176,4 +186,102 @@ text-align: center;
   
   .btn41:hover {
   color: white;
+  }
+
+  .accesso {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .recentitotale{
+    display: flex;
+  }
+  
+  .recentidiv
+  {
+    width: 60%;
+    justify-content: center;
+    text-align: center;
+    font-size: 22px;
+  }
+  
+  .icon{
+    width: 100px;
+    height: 100px;
+  }
+  
+  .recente-div {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 18px;
+  }
+  
+  .recente-div h4 {
+    color: white;
+  }
+  
+  .recente-div img {
+    box-shadow: 10px 10px 20px rgb(31, 31, 31);
+  }
+  
+  h2 {
+    color: white;
+    text-shadow: black;
+    text-decoration:solid;
+  }
+  
+  .btn5{
+    display:inline-block;
+    padding:0.7em 1.4em;
+    margin:0 0.3em 0.3em 0;
+    border:none;
+    border-radius:0.5em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'arial';
+    text-transform:uppercase;
+    font-weight:400;
+    color:#FFFFFF;
+    background-color:#e66a17;
+    box-shadow:inset 0 -0.6em 0 -0.3em rgba(0,0,0,0.20);
+    text-align:center;
+    position:relative;
+    cursor:pointer;
+  }
+  .btn5:hover{
+    background:#ff812c;
+  }
+  .btn5:active{
+    background:#e66a17;
+    top:0.15em;
+    color:#D9D9D9;
+    box-shadow:none;
+  }
+
+  .btn6{
+    display:inline-block;
+    padding:0.7em 1.4em;
+    margin:0 0.3em 0.3em 0;
+    border:none;
+    border-radius:0.5em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'arial';
+    text-transform:uppercase;
+    font-weight:400;
+    color:#FFFFFF;
+    background-color:rgb(13, 13, 58);
+    box-shadow:inset 0 -0.6em 0 -0.3em rgba(0,0,0,0.20);
+    text-align:center;
+    position:relative;
+    cursor:pointer;
+  }
+  .btn6:hover{
+    background:rgb(22, 22, 99);
+  }
+  .btn6:active{
+    background:rgb(23, 23, 102);
+    top:0.15em;
+    color:#D9D9D9;
+    box-shadow:none;
   }
