@@ -70,7 +70,9 @@ export class RegformComponent {
         }
       )
 
+      alert("Registrazione avvenuta con successo.");
       window.location.href="/home";
+      alert("Ora puoi effettuare l'accesso");
 
       
     })

@@ -1,12 +1,12 @@
 <div class="login-div">
-    <h1>BENVENUTI NELL'AREA LOGIN</h1>
+    <h1>LOGIN</h1>
     <form id="login" [formGroup]="loginForm" (ngSubmit)="submitForm()">
-        <label for="username">USERNAME:</label>
-        <input type="text" name="username" formControlName="username">
+        <label for="username">USERNAME</label>
+        <input type="text" name="username" formControlName="username" class="module" placeholder="Inserisci l'username">
         <br>
-        <label for="password">PASSWORD:</label>
-        <input type="password" name="password" formControlName="password">
+        <label for="password">PASSWORD</label>
+        <input type="password" name="password" formControlName="password" class="module" placeholder="Inserisci la password">
         <br>
-        <input type="submit" value="Effettua login">
+        <input type="submit" value="Effettua login" class="btn5">
     </form>
 </div>
