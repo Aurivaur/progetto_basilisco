@@ -1,9 +1,9 @@
-<div>
+<div id="title">
     <h1>Collezione Dischi</h1>
     <br>
 </div>
 <div id="back">
-    <button class="button-87" role="button" (click)="back()">HOME</button><br>
+    <button class="btn41" role="button" (click)="back()">HOME</button><br>
 </div>
 <div>
     <div *ngFor="let d of dischi" id="element">
@@ -15,10 +15,10 @@
             <h3> Autore: {{d.autore}} </h3>
             <h3> Genere: {{d.genere}} </h3>
             <h3> Prezzo: {{d.prezzo}} € </h3>
-            <button *ngIf="!(selected == d.id)" (click)="dettaglio(d.id)">Dettaglio</button>
-            <button *ngIf="selected == d.id" (click)="chiudi()">Chiudi</button>
+            <button *ngIf="!(selected == d.id)" (click)="dettaglio(d.id)" class="btn5">Dettaglio</button>
+            <button *ngIf="selected == d.id" (click)="chiudi()" class="btn5">Chiudi</button>
         </div>
-        <div id="dettaglio">
+        <div id="dettaglio" *ngIf="selected == d.id">
             <h2 *ngIf="selected == d.id"> Dettaglio: </h2>
             <h3 *ngIf="selected == d.id"> Anno: {{d.annoPubblicazione}} </h3>
             <h3 *ngIf="selected == d.id"> Descrizione: {{d.descrizione}} </h3>
