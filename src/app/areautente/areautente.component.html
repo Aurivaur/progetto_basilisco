@@ -1,6 +1,6 @@
 <!--DATI PERSONALI-->
 <div class="modal" role="button" *ngIf="isDatiPersonali">
-    <button (click)="toggleVediDati()">CHIUDI</button><div id="logoDatiP"><img src="assets/images/logoBa.png" height="45px" width="40px"/></div>
+    <button (click)="toggleVediDati()" class="btn5">CHIUDI</button><div id="logoDatiP"><img src="assets/images/logoBa.png" height="45px" width="40px"/></div>
     <br>
     <div id="dati">
         <br>
@@ -8,7 +8,7 @@
         Cognome: {{user?.cognome}}<br>
         Data di Nascita: {{user?.dataNascita}}<br>
         E-mail: {{user?.email}}<br>
-    </div></div>
+    </div>
  
 <button class="button-86" role="button" (click)="logout()">LOGOUT</button>
 <button class="button-86" role="button" (click)="carrello()">CARRELLO</button>
