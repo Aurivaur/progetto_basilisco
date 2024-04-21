@@ -1,38 +1,35 @@
 <!--Riceve i dati  MA non li mostra-->
 
 <!--<app-carrello [carrello]="listacarrello"></app-carrello>-->
-<div>
+<div id="title">
     <h1>Carrello</h1>
 </div>
 <div id="back">
-    <button class="bottoni-carrello" role="button" (click)="back()">HOME</button><br>
+    <button class="bottoni-carrello" role="button" (click)="back()" class="btn41">HOME</button><br>
 </div>
-<div>
+<div class="resoconto-div">
     <h2>Resoconto: </h2>
     <div>
         <ul>
             <li *ngFor="let p of carrello">
-                    <h4>{{p.titolo}} - {{p.prezzo}} €  <button (click)="elimina(p.id)"> X </button></h4>
-                    
+                    <h4>{{p.titolo}} - {{p.prezzo}} €  <button (click)="elimina(p.id)" class="btn5"> X </button></h4>
             </li>
         </ul>
-        <button class="svuota" (click)="svuota()">Svuota carrello</button>
-        <p>Prezzo totale: {{ totale }} €</p>
-        
+    <button class="svuota" (click)="svuota()" class="btn5">Svuota carrello</button>
+    <h2>Prezzo totale: {{ totale }} €</h2>
     </div>
-
-    <h2>Totale: </h2>
     <form action="">
-        <label for="indirizzofatturazione">Inserisci indirizzo fatturazione: </label>
-        <input type="text" name="indirizzofatturazione">
         <br>
-        <label for="indirizzospedizione">Inserisci indirizzo spedizione: </label>
-        <input type="text" name="indirizzospedizione">
+        <label for="indirizzofatturazione">Indirizzo di fatturazione </label>
+        <input type="text" name="indirizzofatturazione" placeholder="Inserisci l'indirizzo di fatturazione">
         <br>
-        <label for="metododipagamento">Inserisci indirizzo fatturazione: </label>
-        <input type="text" name="metododipagamento">
+        <br>
+        <label for="indirizzospedizione">Indirizzo di spedizione </label>
+        <input type="text" name="indirizzospedizione" placeholder="Inserisci l'indirizzo di fatturazione">
+        <br>
         <br>
     </form>
-    <div><button class="acquista" (click)="acquista()">Acquista</button></div>
+    <div><button class="acquista" (click)="acquista()" class="btn5">Acquista</button></div>
+    <br>
 </div>
 

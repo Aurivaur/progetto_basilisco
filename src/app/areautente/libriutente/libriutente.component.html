@@ -2,8 +2,8 @@
     <h1>COLLEZIONE LIBRI</h1>
     <br>
 </div>
-<div><button class="btn41" role="button" (click)="carrello()">CARRELLO</button></div>
 <div id="back">
+    <button class="btn41" role="button" (click)="carrello()">CARRELLO</button>
     <button class="btn41" role="button" (click)="back()">HOME</button><br>
 </div>
 <div>
@@ -16,7 +16,7 @@
             <h3> Autore: {{d.autore}} </h3>
             <h3> Genere: {{d.genere}} </h3>
             <h3> Prezzo: {{d.prezzo}} € </h3>
-            <button *ngIf="!(selected == d.id)" (click)="dettaglio(d.id)">Dettaglio</button>
+            <button *ngIf="!(selected == d.id)" (click)="dettaglio(d.id)" class="btn5">Dettaglio</button>
             <button *ngIf="selected == d.id" (click)="chiudi()" class="btn5">Chiudi</button>
             <button (click)="aggiungiAlCarrello(d.id)" class="btn5">Aggiungi al Carrello</button>
         </div>
