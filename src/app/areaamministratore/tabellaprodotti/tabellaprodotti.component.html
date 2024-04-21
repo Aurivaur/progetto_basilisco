@@ -10,9 +10,6 @@
         <label for="titolo">Titolo: </label>
         <input type="text" name="titolo" formControlName="titolo">
         <br>
-        <label for="quantitamagazzino">Quantità: </label>
-        <input type="number" name="quantitamagazzino" formControlName="quantitamagazzino">
-        <br>
         <label for="prezzo">Prezzo: </label>
         <input type="number" name="prezzo" formControlName="prezzo">
         <br>
@@ -45,8 +42,6 @@
     <form [formGroup]="formInserisciLibri" (ngSubmit)="submitInserisciLibri()" >
         <label for="titolo">Titolo: </label>
         <input type="text" name="titolo" formControlName="titolo"><br>
-        <label for="quantitamagazzino">Quantità: </label>
-        <input type="number" name="quantitamagazzino" formControlName="quantitamagazzino"><br>
         <label for="prezzo">Prezzo: </label>
         <input type="number" name="prezzo" formControlName="prezzo"><br>
         <label for="editore">Editore: </label>
@@ -79,7 +74,6 @@
         <th>Anno di Pubblicazione</th>
         <th>Editore</th>
         <th>Numero di Pagine</th>
-        <th>Quantità</th>
         <th>Prezzo</th>
         <th>Descrizione</th>
         <th>Elimina</th>
@@ -94,7 +88,6 @@
     <td>{{l.annoPubblicazione}}</td> 
     <td>{{l.editore}}</td> 
     <td>{{l.numeroPagine}}</td> 
-    <td>{{l.quantita}}</td> 
     <td>{{l.prezzo}}</td>
     <td>{{l.descrizione}}</td>
     <td><button (click)="deleteLibri(l.id)">Elimina</button></td> 
@@ -117,9 +110,6 @@
 
         <label for="titolo">Titolo: </label>
         <input type="text" name="titolo" formControlName="titolo">
-        <br>
-        <label for="quantitamagazzino">Quantità: </label>
-        <input type="number" name="quantitamagazzino" formControlName="quantitamagazzino">
         <br>
         <label for="prezzo">Prezzo: </label>
         <input type="number" name="prezzo" formControlName="prezzo">
@@ -152,8 +142,6 @@
     <form [formGroup]="formInserisciGiochi" (ngSubmit)="submitInserisciGiochi()" >
         <label for="titolo">Titolo: </label>
         <input type="text" name="titolo" formControlName="titolo"><br>
-        <label for="quantitamagazzino">Quantità: </label>
-        <input type="number" name="quantitamagazzino" formControlName="quantitamagazzino"><br>
         <label for="prezzo">Prezzo: </label>
         <input type="number" name="prezzo" formControlName="prezzo"><br>
         <label for="editore">Editore: </label>
@@ -185,7 +173,6 @@
         <th>Titolo</th>
         <th>Anno di Pubblicazione</th>
         <th>Editore</th>
-        <th>Quantità</th>
         <th>Prezzo</th>
         <th>Età minima</th>
         <th>Numero minimo di giocatori</th>
@@ -201,7 +188,6 @@
     <td>{{l.titolo}}</td>
     <td>{{l.annoPubblicazione}}</td> 
     <td>{{l.editore}}</td> 
-    <td>{{l.quantita}}</td> 
     <td>{{l.prezzo}}</td>
     <td>{{l.minEta}}</td>
     <td>{{l.minGiocatori}}</td>
@@ -228,9 +214,6 @@
 
         <label for="titolo">Titolo: </label>
         <input type="text" name="titolo" formControlName="titolo">
-        <br>
-        <label for="quantitamagazzino">Quantità: </label>
-        <input type="number" name="quantitamagazzino" formControlName="quantitamagazzino">
         <br>
         <label for="prezzo">Prezzo: </label>
         <input type="number" name="prezzo" formControlName="prezzo">
@@ -264,8 +247,6 @@
     <form [formGroup]="formInserisciDischi" (ngSubmit)="submitInserisciDischi()" >
         <label for="titolo">Titolo: </label>
         <input type="text" name="titolo" formControlName="titolo"><br>
-        <label for="quantitamagazzino">Quantità: </label>
-        <input type="number" name="quantitamagazzino" formControlName="quantitamagazzino"><br>
         <label for="prezzo">Prezzo: </label>
         <input type="number" name="prezzo" formControlName="prezzo"><br>
         <label for="editore">Editore: </label>
@@ -297,7 +278,6 @@
         <th>Genere</th>
         <th>Anno di Pubblicazione</th>
         <th>Editore</th>
-        <th>Quantità</th>
         <th>Prezzo</th>
         <th>Durata</th>
         <th>Descrizione</th>
@@ -311,8 +291,7 @@
     <td>{{l.genere}}</td> 
     <td>{{l.autore}}</td>
     <td>{{l.annoPubblicazione}}</td> 
-    <td>{{l.editore}}</td> 
-    <td>{{l.quantita}}</td> 
+    <td>{{l.editore}}</td>  
     <td>{{l.prezzo}}</td>
     <td>{{l.durata}}</td>
     <td>{{l.descrizione}}</td> 
