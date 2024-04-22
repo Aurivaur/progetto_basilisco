@@ -10,6 +10,9 @@
         <label for="titolo">Titolo: </label>
         <input type="text" name="titolo" formControlName="titolo">
         <br>
+        <label for="quantitamagazzino">Quantità: </label>
+        <input type="number" name="quantitamagazzino" formControlName="quantitamagazzino">
+        <br>
         <label for="prezzo">Prezzo: </label>
         <input type="number" name="prezzo" formControlName="prezzo">
         <br>
@@ -42,6 +45,9 @@
     <form [formGroup]="formInserisciLibri" (ngSubmit)="submitInserisciLibri()" >
         <label for="titolo">Titolo: </label>
         <input type="text" name="titolo" formControlName="titolo"><br>
+        <label for="quantitamagazzino">Quantità: </label>
+        <input type="number" name="quantitamagazzino" formControlName="quantitamagazzino">
+        <br>
         <label for="prezzo">Prezzo: </label>
         <input type="number" name="prezzo" formControlName="prezzo"><br>
         <label for="editore">Editore: </label>
@@ -215,6 +221,9 @@
         <label for="titolo">Titolo: </label>
         <input type="text" name="titolo" formControlName="titolo">
         <br>
+        <label for="quantitamagazzino">Quantità: </label>
+        <input type="number" name="quantitamagazzino" formControlName="quantitamagazzino">
+        <br>
         <label for="prezzo">Prezzo: </label>
         <input type="number" name="prezzo" formControlName="prezzo">
         <br>
@@ -247,6 +256,11 @@
     <form [formGroup]="formInserisciDischi" (ngSubmit)="submitInserisciDischi()" >
         <label for="titolo">Titolo: </label>
         <input type="text" name="titolo" formControlName="titolo"><br>
+        <label for="quantitamagazzino">Quantità: </label>
+        <input type="number" name="quantitamagazzino" formControlName="quantitamagazzino">
+        <br>
+        <label for="quantitamagazzino">Quantità: </label>
+        <input type="number" name="quantitamagazzino" formControlName="quantitamagazzino">
         <label for="prezzo">Prezzo: </label>
         <input type="number" name="prezzo" formControlName="prezzo"><br>
         <label for="editore">Editore: </label>
