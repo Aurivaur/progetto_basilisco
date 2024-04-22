@@ -16,7 +16,7 @@ export class CarrelloComponent {
 
   //carrello! : Prodotto[];
 
-  totale : number = 0;
+  totale = 0;
 
 
   constructor(private http : HttpClient){
@@ -106,7 +106,8 @@ export class CarrelloComponent {
   calcoloTotale() {
     this.totale = 0;
     this.carrello?.forEach((p) => {
-      this.totale! += p.prezzo;
+      this.totale! += (p.prezzo);
+      this.totale.toFixed(2);
     });
   }
 
